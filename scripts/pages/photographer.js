@@ -13,7 +13,7 @@ fetch('././data/photographers.json')
 
             const photographerContainer = document.getElementsByClassName('photograph-header')[0];
             
-            // textes
+            // texts
             const div = document.createElement('div');
             const h1 = document.createElement('h1');
             h1.textContent = name;
