@@ -20,7 +20,9 @@ fetch('././data/photographers.json')
             div.appendChild(h1);
 
             const divSubText = document.createElement('div');
+            divSubText.classList.add('sub-text');
             const pLocation = document.createElement('p');
+            pLocation.classList.add('text-location')
             pLocation.textContent = `${city}, ${country}`;
             const p = document.createElement('p');
             p.textContent = tagline;
