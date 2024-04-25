@@ -1,10 +1,9 @@
 function photographerTemplate(data) {
-    const { name, portrait, country, city, tagline, price } = data;
+    const { name, portrait, country, city, tagline, price, id } = data;
     const picture = `assets/photographers/${portrait}`;
     
     function getUserCardDOM() {
-        const article = `<article><a href="photographer.html" alt="${name}²"><img src="${picture}" alt="" /><h2>${name}</h2></a><h3>${city}, ${country}</h3><p>${tagline}</p><span>${price}€/jour</span></article>`;
-        console.log(article)
+        const article = `<article><a href="photographer.html?id=${id}" alt="${name}"><img src="${picture}" alt="" /><h2>${name}</h2></a><h3>${city}, ${country}</h3><p>${tagline}</p><span>${price}€/jour</span></article>`;
         return article;
 
         /*
