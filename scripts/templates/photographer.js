@@ -3,13 +3,14 @@ function photographerTemplate(data) {
     const picture = `assets/photographers/${portrait}`;
     
     function getUserCardDOM() {
+        /*
         const article = `<article><a href="photographer.html?id=${id}" alt="${name}"><img src="${picture}" alt="" /><h2>${name}</h2></a><h3>${city}, ${country}</h3><p>${tagline}</p><span>${price}€/jour</span></article>`;
         return article;
+        */
 
-        /*
         const article = document.createElement('article');
         const a = document.createElement('a');
-        a.setAttribute('href', 'photographer.html');
+        a.setAttribute('href', `photographer.html?id=${id}`);
         a.setAttribute('alt', name) ;
 
         const img = document.createElement('img');
@@ -32,7 +33,6 @@ function photographerTemplate(data) {
         article.appendChild(span);
 
         return (article);
-        */
     }
     return { name, picture, getUserCardDOM }
 }
