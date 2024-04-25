@@ -61,6 +61,24 @@
     color: #000000;
 }
 
+.likes-and-price {
+    position: fixed;
+    bottom: 0;
+    right: 36px;
+    z-index: 999;
+    display: flex;
+    gap: 70px;
+    padding: 21px 31px;
+    background-color: #DB8876;
+    font-size: 24px;
+    font-weight: 500;
+    border-radius: 5px 5px 0 0;
+}
+
+.likes-and-price i {
+    font-size: 22px;
+}
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
