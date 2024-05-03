@@ -4,7 +4,6 @@ x = document.getElementsByClassName("custom-select");
 l = x.length;
 for (i = 0; i < l; i++) {
   selElmnt = x[i].getElementsByTagName("select")[0];
-  console.log(x[i])
   ll = selElmnt.length;
   /* For each element, create a new DIV that will act as the selected item: */
   a = document.createElement("DIV");
@@ -19,6 +18,9 @@ for (i = 0; i < l; i++) {
     create a new DIV that will act as an option item: */
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
+    if (c.innerText === a.innerText) {
+      c.classList.add("select-hide")
+    }
     c.addEventListener("click", function(e) {
         /* When an item is clicked, update the original select box,
         and the selected item: */
@@ -30,12 +32,12 @@ for (i = 0; i < l; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
             h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
+            y = this.parentNode.getElementsByClassName("select-hide");
             yl = y.length;
             for (k = 0; k < yl; k++) {
               y[k].removeAttribute("class");
             }
-            this.setAttribute("class", "same-as-selected");
+            this.setAttribute("class", "select-hide");
             break;
           }
         }

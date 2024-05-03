@@ -54,6 +54,7 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "DM Sans", sans-serif;
 }
 
 .contact_button:hover, .contact_button:focus {
@@ -87,10 +88,6 @@
     display: none; /*hide original SELECT element: */
 }
 
-.select-selected {
-    background-color: #901C1C;
-}
-
 /* Style the arrow inside the select element: */
 .select-selected:after {
     position: absolute;
@@ -108,24 +105,35 @@
     border-color: transparent transparent #fff transparent;
     top: 7px;
 }
+.select-selected.select-arrow-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
 /* style the items (options), including the selected item: */
 .select-items div,.select-selected {
     color: #ffffff;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 23px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 14px 20px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     border-top: 1px solid white;
     cursor: pointer;
+}
+.select-selected {
+    background-color: #901C1C;
+    border-radius: 5px;
+    padding: 18px 20px;
 }
 
 /* Style items (options): */
 .select-items {
     position: absolute;
     background-color: #901C1C;
-    top: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    top: calc(100% - 10px);
     left: 0;
     right: 0;
     z-index: 99;
