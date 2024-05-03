@@ -41,6 +41,11 @@ class App {
 
         photographerTemplate.createPhotographerHeader()
         mediaTemplate.createPhotographerSnippet()
+
+        // medias gallery
+        const mediasWrapper = document.querySelector('.medias')
+
+        mediasWrapper.appendChild(mediaTemplate.createPhotographerMedias())
     }
 }
 

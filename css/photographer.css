@@ -41,6 +41,7 @@
     width: 200px;
     border-radius: 100px;
     object-fit: cover;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 .contact_button {
@@ -147,6 +148,35 @@
 .select-items div:hover, .same-as-selected {
     background-color: #D3573C;
     color: #000000;
+}
+
+/* MEDIAS */
+.medias {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.medias img {
+    display: block;
+    height: 300px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.medias .card-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 24px;
+    color: #901C1C;
+}
+
+.medias .card-likes {
+    cursor: pointer;
 }
 
 .likes-and-price {

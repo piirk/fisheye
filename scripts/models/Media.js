@@ -28,7 +28,7 @@ class Media {
     }
 
     get url() {
-        return this._url
+        return `assets/medias/${this._photographerId}/${this._url}`
     }
 
     get type() {
