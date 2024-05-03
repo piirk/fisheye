@@ -11,10 +11,6 @@ class PhotographerTemplate {
         this._photographer = photographer
     }
 
-    get photographer() {
-        return this._photographer
-    }
-
     createPhotographerCard() {
         const wrapper = document.createElement('div')
         
@@ -24,62 +20,48 @@ class PhotographerTemplate {
                     <img src="${this._photographer.portrait}" alt="${this._photographer.name}" />
                     <h2>${this._photographer.name}</h2>
                 </a>
-                <h3>${this._photographer.city}, ${this._photographer.country}</h3>
-                <p>${this._photographer.tagline}</p>
-                <span>${this._photographer.price}€/jour</span>
+                <div>
+                    <span class="text-location">${this._photographer.city}, ${this._photographer.country}</span>
+                    <p>${this._photographer.tagline}</p>
+                    <span class="text-price">${this._photographer.price}€/jour</span>
+                </div>
             </article>
         `
 
         wrapper.innerHTML = photographerCard
         return wrapper
     }
-}
-/*
-function photographerTemplate(data) {
-    const { name, portrait, country, city, tagline, price, id } = data;
-    const picture = `assets/photographers/${portrait}`;
-    
 
-    // to do : class
+    createPhotographerHeader() {
+        const photographerContainer = document.getElementsByClassName('photograph-header')[0]
+            
+        // texts
+        const textWrapper = document.createElement('div')
 
-    
-    function getUserCardDOM() {
+        const photographerHeaderText = `
+            <h1>${this._photographer.name}</h1>
+            <div class="sub-text">
+                <p class="text-location">${this._photographer.city}, ${this._photographer.country}</p>
+                <p>${this._photographer.tagline}</p>
+            </div>
+        `
 
-        const article = document.createElement('article');
-        
-        const a = document.createElement('a');
-        a.setAttribute('href', `photographer.html?id=${id}`);
-        a.setAttribute('alt', name) ;
+        textWrapper.innerHTML = photographerHeaderText
+        photographerContainer.appendChild(textWrapper)
 
-        const img = document.createElement('img');
-        img.setAttribute("src", picture)
-        img.setAttribute("alt", name)
-        const h2 = document.createElement('h2');
-        h2.textContent = name;
+        // button
+        const button = document.createElement('button')
+        button.classList.add('contact_button')
+        button.setAttribute('onclick', 'displayModal()')
+        button.textContent = "Contactez-moi"
 
-        a.appendChild(img);
-        a.appendChild(h2);
+        photographerContainer.appendChild(button)
 
-        const div = document.createElement('div');
+        // portrait
+        const img = document.createElement('img')
+        img.setAttribute("src", this._photographer.portrait)
+        img.setAttribute('alt', this._photographer.name)
 
-        const spanLocation = document.createElement('span');
-        spanLocation.classList.add('text-location');
-        spanLocation.textContent = `${city}, ${country}`;
-        const p = document.createElement('p');
-        p.textContent = tagline;
-        const spanPrice = document.createElement('span');
-        spanPrice.classList.add('text-price')
-        spanPrice.textContent = `${price}€/jour`;
-
-        div.appendChild(spanLocation);
-        div.appendChild(p);
-        div.appendChild(spanPrice);
-
-        article.appendChild(a);
-        article.appendChild(div);
-
-        return (article);
+        photographerContainer.appendChild(img)
     }
-    return { name, picture, getUserCardDOM }
 }
-*/

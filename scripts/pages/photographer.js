@@ -1,4 +1,6 @@
+app.photographer()
 //Mettre le code JavaScript lié à la page photographer.html
+/*
 const urlParams = new URLSearchParams(window.location.search);
 const photographerId = urlParams.get('id');
 
@@ -74,3 +76,4 @@ fetch('././data/photographers.json')
         }
     })
     .catch(error => console.error('Error fetching data:', error));
+*/

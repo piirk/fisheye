@@ -11,7 +11,6 @@ class Photographer {
         this._city = data.city
         this._tagline = data.tagline
         this._price = data.price
-        this._picture = "1"
     }
  
     get id() {
