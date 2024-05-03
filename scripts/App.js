@@ -20,7 +20,6 @@ class App {
     async photographer() {
         const urlParams = new URLSearchParams(window.location.search)
         const photographerId = urlParams.get('id')
-
         const photographersData = await this.photographersApi.getPhotographers()
 
         const photographer = photographersData.photographers
@@ -39,6 +38,7 @@ class App {
 
         const photographerTemplate = new PhotographerTemplate(photographer)
         const mediaTemplate = new MediaTemplate(photographer, medias)
+
         photographerTemplate.createPhotographerHeader()
         mediaTemplate.createPhotographerSnippet()
     }
@@ -46,9 +46,9 @@ class App {
 
 const app = new App()
 
+// fonction pour les templates, ou la placer ?
 function createHTMLElement(html) {
     const placeholder = document.createElement("div")
     placeholder.innerHTML = html
-    const node = placeholder.firstElementChild
-    return node
+    return placeholder.firstElementChild
 }
