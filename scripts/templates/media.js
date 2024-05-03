@@ -16,20 +16,12 @@ class MediaTemplate {
     createPhotographerSnippet() {
         const wrapper = document.getElementsByClassName('likes-and-price')[0]
         
-        console.log(this._medias)
         // on calcul le nombre total de likes
-        let totalLikes = 0
-        for (const media of this._medias) {
-            totalLikes += media.likes
-        }
+        const totalLikes = this._medias.reduce((acc, media) => acc + media.likes, 0)
 
         const likesAndPrice = `
-            <span>
-                ${totalLikes} <i class="fa-solid fa-heart"></i>
-            </span>
-            <span>
-            ${this._photographer.price}€ / jour
-            </span>
+            <span>${totalLikes} <i class="fa-solid fa-heart"></i></span>
+            <span>${this._photographer.price}€ / jour</span>
         `
 
         wrapper.innerHTML = likesAndPrice

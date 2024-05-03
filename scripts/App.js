@@ -3,6 +3,7 @@ class App {
         this.photographersApi = new PhotographersApi('./data/photographers.json')
     }
 
+    // page index.js
     async index() {
         const photographersWrapper = document.querySelector('.photographer_section')
         const photographersData = await this.photographersApi.getPhotographers()
@@ -15,18 +16,17 @@ class App {
             })
     }
 
+    // page photographer.js
     async photographer() {
         const urlParams = new URLSearchParams(window.location.search)
         const photographerId = urlParams.get('id')
 
-        //const photographerHeaderWrapper = document.getElementsByClassName('photograph-header')[0];
         const photographersData = await this.photographersApi.getPhotographers()
 
         const photographer = photographersData.photographers
             .filter(photographer => photographer.id == photographerId)
             .map(photographer => new Photographer(photographer))[0]
             
-        console.log(photographersData)
         const medias = photographersData.media
             .filter(media => media.photographerId == photographerId)
             .map(media => {
