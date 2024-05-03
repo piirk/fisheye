@@ -50,17 +50,16 @@ class PhotographerTemplate {
         photographerContainer.appendChild(textWrapper)
 
         // button
-        const button = document.createElement('button')
-        button.classList.add('contact_button')
-        button.setAttribute('onclick', 'displayModal()')
-        button.textContent = "Contactez-moi"
+        const button = createHTMLElement(`
+            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        `)
 
         photographerContainer.appendChild(button)
 
         // portrait
-        const img = document.createElement('img')
-        img.setAttribute("src", this._photographer.portrait)
-        img.setAttribute('alt', this._photographer.name)
+        const img = createHTMLElement(`
+            <img src="${this._photographer.portrait}" alt="${this._photographer.name}">
+        `)
 
         photographerContainer.appendChild(img)
     }

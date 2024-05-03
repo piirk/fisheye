@@ -45,3 +45,10 @@ class App {
 }
 
 const app = new App()
+
+function createHTMLElement(html) {
+    const placeholder = document.createElement("div")
+    placeholder.innerHTML = html
+    const node = placeholder.firstElementChild
+    return node
+}
