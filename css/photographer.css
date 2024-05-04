@@ -92,19 +92,16 @@
 /* Style the arrow inside the select element: */
 .select-selected:after {
     position: absolute;
-    content: "";
+    content:"\f077";
+    font-family: FontAwesome;
+    color: #fff;
     top: 14px;
     right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #fff transparent transparent transparent;
 }
 
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
-    border-color: transparent transparent #fff transparent;
-    top: 7px;
+    content:"\f078";
 }
 .select-selected.select-arrow-active {
     border-bottom-left-radius: 0;
@@ -145,9 +142,12 @@
     display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover, .same-as-selected, .select-selected:hover {
     background-color: #D3573C;
-    color: #000000;
+    color: #000;
+}
+.select-selected:hover::after {
+    color: #000;
 }
 
 /* MEDIAS */
