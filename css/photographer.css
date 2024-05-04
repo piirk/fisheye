@@ -167,16 +167,26 @@
     border-radius: 5px;
 }
 
-.medias .card-text {
+.medias .card-content {
     display: flex;
     justify-content: space-between;
-    margin-top: 5px;
+    max-width: 350px;
+    margin-top: 10px;
     font-size: 24px;
     color: #901C1C;
 }
 
+.medias .card-text {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .medias .card-likes {
     cursor: pointer;
+    white-space: nowrap;
+    padding-left: 15px;
 }
 
 .likes-and-price {
