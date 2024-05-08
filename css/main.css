@@ -98,6 +98,78 @@ body {
   color: #901C1C;
 }
 
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #901C1C;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #D3573C;
+  color: #000000;
+}
+
+.custom-select {
+  position: relative;
+  width: 170px;
+}
+.custom-select__items {
+  position: absolute;
+  background-color: #901C1C;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: calc(100% - 10px);
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.custom-select__items div, .custom-select__selected {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  border-top: 1px solid white;
+  cursor: pointer;
+}
+.custom-select__items div:hover, .custom-select__selected:hover {
+  background-color: #D3573C;
+  color: #000;
+}
+.custom-select__items div:hover::after, .custom-select__selected:hover::after {
+  color: #000;
+}
+.custom-select__selected {
+  background-color: #901C1C;
+  border-radius: 5px;
+  padding: 18px 20px;
+}
+.custom-select__selected:after {
+  position: absolute;
+  content: "\f077";
+  font-family: FontAwesome;
+  color: #fff;
+  top: 19px;
+  right: 15px;
+}
+.custom-select__arrow-active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.custom-select__arrow-active:after {
+  content: "\f078";
+}
+
 .main__cards-container {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
@@ -206,25 +278,6 @@ body {
   color: #525252;
   font-size: 18px;
 }
-.profile__contact {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0px;
-  padding: 11px;
-  width: 170px;
-  height: 70px;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  background-color: #901C1C;
-  border-radius: 5px;
-}
-.profile__contact:hover {
-  background-color: #D3573C;
-  color: #000000;
-}
 .profile__image {
   height: 200px;
   width: 200px;
@@ -245,57 +298,6 @@ body {
 .medias-form__label {
   font-size: 18px;
   font-weight: 700;
-}
-.medias-form .custom-select {
-  position: relative;
-  width: 170px;
-}
-.medias-form .custom-select__items {
-  position: absolute;
-  background-color: #901C1C;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  top: calc(100% - 10px);
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-.medias-form .custom-select__items div, .medias-form .custom-select__selected {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 14px 20px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  border-top: 1px solid white;
-  cursor: pointer;
-}
-.medias-form .custom-select__items div:hover, .medias-form .custom-select__selected:hover {
-  background-color: #D3573C;
-  color: #000;
-}
-.medias-form .custom-select__items div:hover::after, .medias-form .custom-select__selected:hover::after {
-  color: #000;
-}
-.medias-form .custom-select__selected {
-  background-color: #901C1C;
-  border-radius: 5px;
-  padding: 18px 20px;
-}
-.medias-form .custom-select__selected:after {
-  position: absolute;
-  content: "\f077";
-  font-family: FontAwesome;
-  color: #fff;
-  top: 19px;
-  right: 15px;
-}
-.medias-form .custom-select__arrow-active {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.medias-form .custom-select__arrow-active:after {
-  content: "\f078";
 }
 
 .card__media {
@@ -329,14 +331,11 @@ body {
   font: inherit;
 }
 
-.modal-container {
+.modal {
   position: fixed;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-}
-
-.modal {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -348,14 +347,19 @@ body {
   padding: 35px;
   margin: auto;
 }
-.modal header {
+.modal__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
   justify-content: space-between;
   width: 100%;
 }
-.modal header img {
+.modal__header img {
   cursor: pointer;
 }
-.modal header h2 {
+.modal__header h2 {
   font-size: 64px;
   font-weight: normal;
   text-align: center;

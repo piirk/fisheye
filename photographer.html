@@ -63,18 +63,19 @@
 
         </main>
 
-        <div id="contact_modal" class="modal-container">
+        <!-- modal contact -->
+        <div id="contact_modal" class="modal-container hide">
             <div class="modal">
-                <header>
-                    <h2>Contactez-moi</h2>
-                    <img src="assets/icons/close.svg" onclick="closeModal()" />
+                <header class="modal__header">
+                    <h2 class="modal__title">Contactez-moi</h2>
+                    <img class="modal__close" src="assets/icons/close.svg" onclick="closeModal()" />
                 </header>
-                <form>
+                <form class="modal__form">
                     <div>
                         <label>Prénom</label>
                         <input />
                     </div>
-                    <button class="contact_button">Envoyer</button>
+                    <button class="btn">Envoyer</button>
                 </form>
             </div>
         </div>

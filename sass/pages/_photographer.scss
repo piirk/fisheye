@@ -58,23 +58,6 @@
         font-size: 18px;
     }
 
-    &__contact {
-        @include center-flex;
-        padding: 11px;
-        width: 170px;
-        height: 70px;
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        background-color: #901C1C;
-        border-radius: 5px;
-
-        &:hover {
-            background-color: #D3573C;
-            color: #000000;
-        }
-    }
-
     &__image {
         height: 200px;
         width: 200px;
@@ -91,66 +74,6 @@
     &__label {
         font-size: 18px;
         font-weight: 700;
-    }
-
-    .custom-select {
-        position: relative;
-        width: 170px;
-
-        &__items {
-            position: absolute;
-            background-color: #901C1C;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            top: calc(100% - 10px);
-            left: 0;
-            right: 0;
-            z-index: 99;
-        }
-
-        &__items div, &__selected {
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: bold;
-            padding: 14px 20px;
-            border: 1px solid transparent;
-            border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-            border-top: 1px solid white;
-            cursor: pointer;
-
-            &:hover {
-                background-color: #D3573C;
-                color: #000;
-
-                &::after {
-                    color: #000;
-                }
-            }
-        }
-
-        &__selected {
-            background-color: #901C1C;
-            border-radius: 5px;
-            padding: 18px 20px;
-
-            &:after {
-                position: absolute;
-                content:"\f077";
-                font-family: FontAwesome;
-                color: #fff;
-                top: 19px;
-                right: 15px;
-            }
-        }
-
-        &__arrow-active {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-
-            &:after {
-                content:"\f078";
-            }
-        }
     }
 }
 
@@ -185,11 +108,8 @@
     }
 }
 
-.modal-container {
-    @include position-fix-center;
-}
-
 .modal {
+    @include position-fix-center;
     @include center-flex-column;
     border-radius: 5px;
     background-color: #DB8876;
@@ -197,7 +117,8 @@
     padding: 35px;
     margin: auto;
 
-    header {
+    &__header {
+        @include center-flex;
         justify-content: space-between;
         width: 100%;
 
