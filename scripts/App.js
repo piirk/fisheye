@@ -3,19 +3,6 @@ class App {
         this.photographersApi = new PhotographersApi('./data/photographers.json')
     }
 
-    // page index.js
-    async index() {
-        const photographersWrapper = document.querySelector('.photographer_section')
-        const photographersData = await this.photographersApi.getPhotographers()
-        
-        photographersData.photographers
-            .map(photographer => new Photographer(photographer))
-            .forEach(photographer => {
-                const Template = new PhotographerTemplate(photographer)
-                photographersWrapper.appendChild(Template.createPhotographerCard())
-            })
-    }
-
     // page photographer.js
     async photographer() {
         // récupération id photographe via url
@@ -90,10 +77,3 @@ class App {
 }
 
 const app = new App()
-
-// fonction pour les templates, ou la placer ?
-function createHTMLElement(html) {
-    const placeholder = document.createElement("div")
-    placeholder.innerHTML = html
-    return placeholder.firstElementChild
-}
