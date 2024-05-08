@@ -159,7 +159,7 @@
     padding: 20px 0;
 }
 
-.medias img {
+.medias img, .medias video {
     display: block;
     height: 300px;
     width: 350px;

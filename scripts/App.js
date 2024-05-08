@@ -41,7 +41,7 @@ class App {
         const totalLikes = medias.reduce((acc, media) => acc + media.likes, 0)
               
         const photographerTemplate = new PhotographerTemplate(photographer)
-        const mediaTemplate = new MediaTemplate(photographer, medias)
+        const mediaTemplate = new MediasTemplate(medias)
 
         photographerTemplate.createProfile()
         photographerTemplate.createPhotographerSnippet(totalLikes)
