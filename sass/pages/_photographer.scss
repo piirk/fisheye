@@ -120,6 +120,7 @@
     &__header {
         @include center-flex;
         justify-content: space-between;
+        align-items: flex-start;
         width: 100%;
 
         img {
@@ -129,7 +130,6 @@
         h2 {
             font-size: 64px;
             font-weight: normal;
-            text-align: center;
         }
     }
 

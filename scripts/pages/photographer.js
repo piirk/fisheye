@@ -93,6 +93,13 @@ app.then((data) => {
 
     PhotographerApp.generateMedias(medias)
 
+    //
+    const titleMetaTag = document.querySelector("title")
+    const contactTitle = document.querySelector(".modal__title")
+
+    titleMetaTag.textContent = `Fisheye - ${photographer.name}`
+    contactTitle.innerHTML = `Contactez-moi<br />${photographer.name}`
+
     // ajout des events listeners
     addListeners()
 })

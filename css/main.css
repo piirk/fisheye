@@ -354,6 +354,7 @@ body {
   align-items: center;
   gap: 0px;
   justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
 }
 .modal__header img {
@@ -362,7 +363,6 @@ body {
 .modal__header h2 {
   font-size: 64px;
   font-weight: normal;
-  text-align: center;
 }
 .modal form {
   display: flex;
