@@ -1,0 +1,112 @@
+.main {
+    .profile-container {
+        @include center-flex;
+        justify-content: space-between;
+        background-color: #FAFAFA;
+        height: 300px;
+        margin: 0 100px;
+        padding: 0 50px;
+    }
+
+    .profile {
+        &__infos {
+            @include center-flex-column(20px);
+            align-items: flex-start;
+        }
+
+        &__name {
+            color: #D3573C;
+            font-size: 64px;
+        }
+
+        &__location {
+            color: #901C1C;
+            font-size: 24px;
+        }
+
+        &__tagline {
+            color: #525252;
+            font-size: 18px;
+        }
+
+        &__contact {
+            @include center-flex;
+            padding: 11px;
+            width: 170px;
+            height: 70px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #901C1C;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #D3573C;
+                color: #000000;
+            }
+        }
+
+        &__image {
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            object-fit: cover;
+            box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .main-container {
+        padding: 10px 0;
+        margin: 0 100px;
+
+        .medias-form {
+            @include center-flex(25px);
+            justify-content: left;
+
+            &__label {
+                font-size: 18px;
+                font-weight: 700;
+            }
+        }
+
+        .medias-container {
+            display: grid;
+            grid-template-columns: repeat(3, 350px);
+            gap: 20px;
+            justify-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .card {
+            &__media {
+                display: block;
+                height: 300px;
+                width: 350px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            &__content {
+                width: 100%;
+                @include center-flex;
+                justify-content: space-between;
+                margin-top: 5px;
+                max-width: 350px;
+                font-size: 24px;
+                color: #901C1C;
+            }
+
+            &__text {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding-right: 10px;
+            }
+
+            &__likes {
+                font: inherit;
+            }
+        }
+    }
+}

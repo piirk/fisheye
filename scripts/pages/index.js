@@ -19,7 +19,7 @@ class IndexApp {
 const app = new IndexApp().main()
 
 //
-const photographersWrapper = document.querySelector('.main__cards')
+const photographersWrapper = document.querySelector('.main__cards-container')
 
 //
 app.then((data) => {

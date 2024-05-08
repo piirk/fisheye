@@ -20,18 +20,16 @@ class PhotographerTemplate {
     }
 
     createProfile() {
-        const wrapper = document.querySelector('.photograph-profile')
+        const wrapper = document.querySelector('.profile-container')
 
         const profile = `
-            <div>
-                <h1>${this._photographer.name}</h1>
-                <div class="sub-text">
-                    <p class="text-location">${this._photographer.city}, ${this._photographer.country}</p>
-                    <p>${this._photographer.tagline}</p>
-                </div>
+            <div class="profile__infos">
+                <h1 class="profile__name">${this._photographer.name}</h1>
+                <p class="profile__location">${this._photographer.city}, ${this._photographer.country}</p>
+                <p class="profile__tagline">${this._photographer.tagline}</p>
             </div>
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-            <img src="${this._photographer.portrait}" alt="${this._photographer.name}">
+            <button class="profile__contact" onclick="displayModal()">Contactez-moi</button>
+            <img class="profile__image" src="${this._photographer.portrait}" alt="${this._photographer.name}">
         `
 
         wrapper.innerHTML = profile

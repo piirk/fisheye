@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
         <meta charset="utf-8">
         <link rel="icon" type="image/png" href="assets/favicon.png">
         <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -29,19 +29,19 @@
     </head>
 
     <body>
-        <header>
+        <header class="header">
             <a href="index.html">
                 <img src="assets/images/logo.png" class="header__logo" />
             </a>
         </header>
-        
-        <main id="main">
 
-            <div class="photograph-profile"></div>
-            <div class="photograph-content">
-                <form>
-                    <label for="order-select">Trier par</label>
-                    <div class="custom-select">
+        <main id="main" class="main">
+
+            <div class="profile-container"></div>
+            <div class="main-container">
+                <form class="medias-form">
+                    <label class="medias-form__label" for="order-select">Trier par</label>
+                    <div class="custom-select hide">
                         <select name="order" id="order-select">
                             <option value="popularité">Popularité</option>
                             <option value="date">Date</option>
@@ -49,7 +49,7 @@
                         </select>
                     </div>
                 </form>
-                <div class="medias"></div>
+                <div class="medias-container"></div>
                 <div class="likes-and-price"></div>
             </div>
 

@@ -4,7 +4,7 @@ class MediasTemplate {
     }
 
     createPhotographerMedias() {
-        const wrapper = document.querySelector('.medias')
+        const wrapper = document.querySelector('.medias-container')
         let mediaCards = ""
         let mediaType = ""
 
@@ -13,11 +13,11 @@ class MediasTemplate {
             
             if (type == 'image') {
                 mediaType = `
-                    <img src="${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">
+                    <img class="card__media" src="${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">
                 `
             } else {
                 mediaType = `
-                    <video src="${url}"></video>
+                    <video class="card__media" src="${url}"></video>
                 `
             }
 
@@ -26,9 +26,9 @@ class MediasTemplate {
                     <a href="" alt="${title}">
                         ${mediaType}
                     </a>
-                    <figcaption class="card-content">
-                        <p class="card-text">${title}</p>
-                        <button class="card-likes">${likes} <i class="fa-solid fa-heart"></i></button>
+                    <figcaption class="card__content">
+                        <p class="card__text">${title}</p>
+                        <button class="card__likes">${likes} <i class="fa-solid fa-heart"></i></button>
                     </figcaption>
                 </figure>
             `
