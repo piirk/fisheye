@@ -27,5 +27,6 @@ const photographersWrapper = document.querySelector('.photographer_section')
 //
 app.then((data) => {
     const { photographers } = data
+    
     IndexApp.init(photographers, photographersWrapper)
 })
