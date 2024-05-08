@@ -25,7 +25,7 @@ class PhotographerTemplate {
         `
 
         wrapper.innerHTML = photographerCard
-        return wrapper
+        return photographerCard
     }
 
     createProfile() {
