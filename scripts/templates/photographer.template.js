@@ -5,16 +5,14 @@ class PhotographerTemplate {
 
     getPhotographerCard() {
         const photographerCard = `
-            <article>
+            <article class="card">
                 <a href="photographer.html?id=${this._photographer.id}" alt="${this._photographer.name}">
-                    <img src="${this._photographer.portrait}" alt="${this._photographer.name}" />
-                    <h2>${this._photographer.name}</h2>
+                    <img class="card__image" src="${this._photographer.portrait}" alt="${this._photographer.name}" />
+                    <h2 class="card__name">${this._photographer.name}</h2>
                 </a>
-                <div>
-                    <span class="text-location">${this._photographer.city}, ${this._photographer.country}</span>
-                    <p>${this._photographer.tagline}</p>
-                    <span class="text-price">${this._photographer.price}€/jour</span>
-                </div>
+                <p class="card__text-location">${this._photographer.city}, ${this._photographer.country}</p>
+                <p class="card__text-tagline">${this._photographer.tagline}</p>
+                <p class="card__text-price">${this._photographer.price}€/jour</p>
             </article>
         `
 
