@@ -196,7 +196,7 @@
     line-height: normal;
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     text-align: inherit;
 
     cursor: pointer;
