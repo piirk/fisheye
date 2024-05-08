@@ -95,7 +95,7 @@ app.then((data) => {
 
     //
     const titleMetaTag = document.querySelector("title")
-    const contactTitle = document.querySelector(".modal__title")
+    const contactTitle = document.querySelector(".modal__header__title")
 
     titleMetaTag.textContent = `Fisheye - ${photographer.name}`
     contactTitle.innerHTML = `Contactez-moi<br />${photographer.name}`
@@ -104,7 +104,7 @@ app.then((data) => {
     addListeners()
 })
 
-// fonction pour créer tout les events listeners
+// fonction pour créer tous les events listeners
 function addListeners() {
     // eventListener pour le form de tri
     const sortForm = document.querySelector('.medias-form')
