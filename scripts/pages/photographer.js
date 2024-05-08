@@ -1,6 +1,3 @@
-/**
- * Page : PhotographerApp
- */
 class PhotographerApp {
     constructor() {
         this._datas = new PhotographersApi('./data/photographers.json')
@@ -40,6 +37,7 @@ class PhotographerApp {
 
     static sortMedias(medias, sortBy) {
         let sortedMedias = [];
+
         switch (sortBy) {
             case "titre": {
                 sortedMedias = medias.sort((a, b) => a.title.localeCompare(b.title))

@@ -1,7 +1,3 @@
-/**
- *  Template : MediasTemplate
- */
-
 class MediasTemplate {
     constructor(medias) {
         this._medias = medias

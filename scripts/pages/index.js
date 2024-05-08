@@ -1,6 +1,3 @@
-/**
- * Page : IndexApp
- */
 class IndexApp {
     constructor() {
         this._datas = new PhotographersApi('./data/photographers.json')
@@ -27,6 +24,6 @@ const photographersWrapper = document.querySelector('.photographer_section')
 //
 app.then((data) => {
     const { photographers } = data
-    
+
     IndexApp.init(photographers, photographersWrapper)
 })

@@ -1,12 +1,4 @@
-/**
- * Classe : Photographer
- */
-
 class Photographer {
-    /**
-     * 
-     * @param {*} data 
-     */
     constructor(data) {
         this._id = data.id
         this._name = data.name

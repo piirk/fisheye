@@ -1,7 +1,3 @@
-/**
- *  Template : PhotographerTemplate
- */
-
 class PhotographerTemplate {
     constructor(photographer) {
         this._photographer = photographer

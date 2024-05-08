@@ -1,6 +1,3 @@
-/**
- * Classe : Media
- */
 class Media {
     constructor(data, url, type) {
         this._id = data.id
