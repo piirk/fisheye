@@ -81,15 +81,11 @@
 
 /* Hide the items when the select box is closed: */
 .select-hide {
-    
 }
 
 .select-items div:hover, .same-as-selected, .select-selected:hover {
-    background-color: #D3573C;
-    color: #000;
 }
 .select-selected:hover::after {
-    color: #000;
 }
 
 /* MEDIAS */
