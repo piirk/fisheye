@@ -32,7 +32,7 @@ class MediasTemplate {
                     </a>
                     <figcaption class="card-content">
                         <p class="card-text">${title}</p>
-                        <span class="card-likes">${likes} <i class="fa-solid fa-heart"></i></span>
+                        <button class="card-likes">${likes} <i class="fa-solid fa-heart"></i></button>
                     </figcaption>
                 </figure>
             `
