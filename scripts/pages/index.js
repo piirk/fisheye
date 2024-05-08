@@ -15,6 +15,7 @@ class IndexApp {
     }
 }
 
+//
 const app = new IndexApp().main()
 
 const photographersWrapper = document.querySelector('.photographer_section')

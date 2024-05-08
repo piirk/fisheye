@@ -3,7 +3,7 @@ class App {
         this.photographersApi = new PhotographersApi('./data/photographers.json')
     }
 
-    // page photographer.js
+    // page photographer.js > todo: PhotographerApp class in pages/photographer.js
     async photographer() {
         // récupération id photographe via url
         const urlParams = new URLSearchParams(window.location.search)

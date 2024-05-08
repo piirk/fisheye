@@ -8,8 +8,6 @@ class PhotographerTemplate {
     }
 
     createPhotographerCard() {
-        const wrapper = document.createElement('div')
-        
         const photographerCard = `
             <article>
                 <a href="photographer.html?id=${this._photographer.id}" alt="${this._photographer.name}">
@@ -24,7 +22,6 @@ class PhotographerTemplate {
             </article>
         `
 
-        wrapper.innerHTML = photographerCard
         return photographerCard
     }
 
