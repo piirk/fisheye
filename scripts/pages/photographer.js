@@ -100,7 +100,7 @@ app.then((data) => {
 // fonction pour créer tout les events listeners
 function addListeners() {
     // eventListener pour le form de tri
-    const sortForm = document.querySelector('form')
+    const sortForm = document.querySelector('.medias-form')
     const sortBySelect = document.getElementById('order-select')
 
     sortForm.addEventListener('change', (event) => {
@@ -110,7 +110,7 @@ function addListeners() {
 
     // gestion d'event entre select généré et select original (pour sémantique)
     const originalSelect = document.getElementById('order-select')
-    const selectItems = document.querySelectorAll('.select-items div')
+    const selectItems = document.querySelectorAll('.custom-select__items div')
 
     selectItems.forEach(item => {
         item.addEventListener('click', (event) => {

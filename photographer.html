@@ -41,21 +41,29 @@
             <div class="main-container">
                 <form class="medias-form">
                     <label class="medias-form__label" for="order-select">Trier par</label>
-                    <div class="custom-select hide">
-                        <select name="order" id="order-select">
+                    <div class="custom-select">
+                        <select class="hide" name="order" id="order-select">
                             <option value="popularité">Popularité</option>
                             <option value="date">Date</option>
                             <option value="titre">Titre</option>
                         </select>
+                        <!-- 
+                        <div class="custom-select__selected">Popularité</div>
+                        <div class="custom-select__items hide">
+                            <div class="hide">Popularité</div>
+                            <div>Date</div>
+                            <div>Titre</div>
+                        </div>
+                        -->
                     </div>
                 </form>
                 <div class="medias-container"></div>
-                <div class="likes-and-price"></div>
+                <div class="snippet-container"></div>
             </div>
 
         </main>
 
-        <div id="contact_modal">
+        <div id="contact_modal" class="modal-container">
             <div class="modal">
                 <header>
                     <h2>Contactez-moi</h2>

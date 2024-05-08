@@ -36,7 +36,7 @@ class PhotographerTemplate {
     }
 
     createPhotographerSnippet(totalLikes) {
-        const wrapper = document.querySelector('.likes-and-price')
+        const wrapper = document.querySelector('.snippet-container')
 
         const photographerSnippet = `
             <span>${totalLikes} <i class="fa-solid fa-heart"></i></span>

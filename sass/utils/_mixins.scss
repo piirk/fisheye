@@ -21,6 +21,12 @@
     gap: $gap;
 }
 
+@mixin grid-columns($columns: auto-fill, $width: 1fr, $gap: 0px) {
+    display: grid;
+    grid-template-columns: repeat($columns, $width);
+    gap: $gap;
+}
+
 @mixin position-fix-center {
     position: fixed;
     top: 50%;

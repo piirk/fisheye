@@ -7,19 +7,19 @@ for (i = 0; i < l; i++) {
   ll = selElmnt.length;
   /* For each element, create a new DIV that will act as the selected item: */
   a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
+  a.setAttribute("class", "custom-select__selected");
   a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
   x[i].appendChild(a);
   /* For each element, create a new DIV that will contain the option list: */
   b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
+  b.setAttribute("class", "custom-select__items hide");
   for (j = 0; j < ll; j++) {
     /* For each option in the original select element,
     create a new DIV that will act as an option item: */
     c = document.createElement("DIV");
     c.innerHTML = selElmnt.options[j].innerHTML;
     if (c.innerText === a.innerText) {
-      c.classList.add("select-hide")
+      c.classList.add("hide")
     }
     c.addEventListener("click", function(e) {
         /* When an item is clicked, update the original select box,
@@ -32,12 +32,12 @@ for (i = 0; i < l; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
             s.selectedIndex = i;
             h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("select-hide");
+            y = this.parentNode.getElementsByClassName("hide");
             yl = y.length;
             for (k = 0; k < yl; k++) {
               y[k].removeAttribute("class");
             }
-            this.setAttribute("class", "select-hide");
+            this.setAttribute("class", "hide");
             break;
           }
         }
@@ -51,8 +51,8 @@ for (i = 0; i < l; i++) {
     and open/close the current select box: */
     e.stopPropagation();
     closeAllSelect(this);
-    this.nextSibling.classList.toggle("select-hide");
-    this.classList.toggle("select-arrow-active");
+    this.nextSibling.classList.toggle("hide");
+    this.classList.toggle("custom-select__arrow-active");
   });
 }
 
@@ -60,20 +60,20 @@ function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
   except the current select box: */
   var x, y, i, xl, yl, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
+  x = document.getElementsByClassName("custom-select__items");
+  y = document.getElementsByClassName("custom-select__selected");
   xl = x.length;
   yl = y.length;
   for (i = 0; i < yl; i++) {
     if (elmnt == y[i]) {
       arrNo.push(i)
     } else {
-      y[i].classList.remove("select-arrow-active");
+      y[i].classList.remove("custom-select__arrow-active");
     }
   }
   for (i = 0; i < xl; i++) {
     if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
+      x[i].classList.add("hide");
     }
   }
 }

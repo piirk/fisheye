@@ -155,7 +155,38 @@ body {
   margin: 0 100px;
   padding: 0 50px;
 }
-.main .profile__infos {
+.main .main-container {
+  padding: 10px 0;
+  margin: 0 100px;
+}
+.main .main-container .medias-container {
+  display: grid;
+  grid-template-columns: repeat(3, 350px);
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.main .snippet-container {
+  position: fixed;
+  bottom: 0;
+  right: 36px;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  padding: 21px 31px;
+  background-color: #DB8876;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 5px 5px 0 0;
+}
+.main .snippet-container .fa-heart {
+  font-size: 22px;
+}
+
+.profile__infos {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,19 +194,19 @@ body {
   gap: 20px;
   align-items: flex-start;
 }
-.main .profile__name {
+.profile__name {
   color: #D3573C;
   font-size: 64px;
 }
-.main .profile__location {
+.profile__location {
   color: #901C1C;
   font-size: 24px;
 }
-.main .profile__tagline {
+.profile__tagline {
   color: #525252;
   font-size: 18px;
 }
-.main .profile__contact {
+.profile__contact {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -190,11 +221,11 @@ body {
   background-color: #901C1C;
   border-radius: 5px;
 }
-.main .profile__contact:hover {
+.profile__contact:hover {
   background-color: #D3573C;
   color: #000000;
 }
-.main .profile__image {
+.profile__image {
   height: 200px;
   width: 200px;
   border-radius: 100px;
@@ -202,11 +233,8 @@ body {
      object-fit: cover;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.1);
 }
-.main .main-container {
-  padding: 10px 0;
-  margin: 0 100px;
-}
-.main .main-container .medias-form {
+
+.medias-form {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -214,19 +242,63 @@ body {
   gap: 25px;
   justify-content: left;
 }
-.main .main-container .medias-form__label {
+.medias-form__label {
   font-size: 18px;
   font-weight: 700;
 }
-.main .main-container .medias-container {
-  display: grid;
-  grid-template-columns: repeat(3, 350px);
-  gap: 20px;
-  justify-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
+.medias-form .custom-select {
+  position: relative;
+  width: 170px;
 }
-.main .main-container .card__media {
+.medias-form .custom-select__items {
+  position: absolute;
+  background-color: #901C1C;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  top: calc(100% - 10px);
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.medias-form .custom-select__items div, .medias-form .custom-select__selected {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  border-top: 1px solid white;
+  cursor: pointer;
+}
+.medias-form .custom-select__items div:hover, .medias-form .custom-select__selected:hover {
+  background-color: #D3573C;
+  color: #000;
+}
+.medias-form .custom-select__items div:hover::after, .medias-form .custom-select__selected:hover::after {
+  color: #000;
+}
+.medias-form .custom-select__selected {
+  background-color: #901C1C;
+  border-radius: 5px;
+  padding: 18px 20px;
+}
+.medias-form .custom-select__selected:after {
+  position: absolute;
+  content: "\f077";
+  font-family: FontAwesome;
+  color: #fff;
+  top: 14px;
+  right: 10px;
+}
+.medias-form .custom-select__arrow-active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.medias-form .custom-select__arrow-active:after {
+  content: "\f078";
+}
+
+.card__media {
   display: block;
   height: 300px;
   width: 350px;
@@ -234,7 +306,7 @@ body {
      object-fit: cover;
   border-radius: 5px;
 }
-.main .main-container .card__content {
+.card__content {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -247,12 +319,12 @@ body {
   font-size: 24px;
   color: #901C1C;
 }
-.main .main-container .card__text {
+.card__text {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   padding-right: 10px;
 }
-.main .main-container .card__likes {
+.card__likes {
   font: inherit;
 }/*# sourceMappingURL=main.css.map */
