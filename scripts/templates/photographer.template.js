@@ -3,10 +3,6 @@
  */
 
 class PhotographerTemplate {
-    /**
-     * 
-     * @param {Photographer} photographer 
-     */
     constructor(photographer) {
         this._photographer = photographer
     }
@@ -32,35 +28,32 @@ class PhotographerTemplate {
         return wrapper
     }
 
-    createPhotographerHeader() {
-        const photographerContainer = document.getElementsByClassName('photograph-header')[0]
-            
-        // texts
-        const textWrapper = document.createElement('div')
+    createProfile() {
+        const wrapper = document.querySelector('.photograph-profile')
 
-        const photographerHeaderText = `
-            <h1>${this._photographer.name}</h1>
-            <div class="sub-text">
-                <p class="text-location">${this._photographer.city}, ${this._photographer.country}</p>
-                <p>${this._photographer.tagline}</p>
+        const profile = `
+            <div>
+                <h1>${this._photographer.name}</h1>
+                <div class="sub-text">
+                    <p class="text-location">${this._photographer.city}, ${this._photographer.country}</p>
+                    <p>${this._photographer.tagline}</p>
+                </div>
             </div>
+            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+            <img src="${this._photographer.portrait}" alt="${this._photographer.name}">
         `
 
-        textWrapper.innerHTML = photographerHeaderText
-        photographerContainer.appendChild(textWrapper)
+        wrapper.innerHTML = profile
+    }
 
-        // button
-        const button = createHTMLElement(`
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-        `)
+    createPhotographerSnippet(totalLikes) {
+        const wrapper = document.querySelector('.likes-and-price')
 
-        photographerContainer.appendChild(button)
+        const photographerSnippet = `
+            <span>${totalLikes} <i class="fa-solid fa-heart"></i></span>
+            <span>${this._photographer.price}€ / jour</span>
+        `
 
-        // portrait
-        const img = createHTMLElement(`
-            <img src="${this._photographer.portrait}" alt="${this._photographer.name}">
-        `)
-
-        photographerContainer.appendChild(img)
+        wrapper.innerHTML = photographerSnippet
     }
 }

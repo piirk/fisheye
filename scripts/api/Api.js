@@ -1,8 +1,4 @@
 class Api {
-    /**
-     * 
-     * @param {string} url 
-     */
     constructor(url) {
         this._url = url
     }
@@ -16,10 +12,6 @@ class Api {
 }
 
 class PhotographersApi extends Api {
-    /**
-     * 
-     * @param {string} url 
-     */
     constructor(url) {
         super(url)
     }

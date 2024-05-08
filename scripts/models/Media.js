@@ -2,12 +2,6 @@
  * Classe : Media
  */
 class Media {
-    /**
-     * 
-     * @param {Object} data 
-     * @param {String} url 
-     * @param {String} type 
-     */
     constructor(data, url, type) {
         this._id = data.id
         this._photographerId = data.photographerId

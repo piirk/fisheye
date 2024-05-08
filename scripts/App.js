@@ -37,12 +37,14 @@ class App {
                 }
             })
             .sort((a, b) => b.likes - a.likes)
+        
+        const totalLikes = medias.reduce((acc, media) => acc + media.likes, 0)
               
         const photographerTemplate = new PhotographerTemplate(photographer)
         const mediaTemplate = new MediaTemplate(photographer, medias)
 
-        photographerTemplate.createPhotographerHeader()
-        mediaTemplate.createPhotographerSnippet()
+        photographerTemplate.createProfile()
+        photographerTemplate.createPhotographerSnippet(totalLikes)
 
         // medias gallery, tri "popularité" par défaut
         mediaTemplate.createPhotographerMedias()

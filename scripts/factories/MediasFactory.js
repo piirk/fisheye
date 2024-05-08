@@ -14,7 +14,7 @@ class MediasFactory {
         } else if (type === 'video') {
             return new Media(data, data.video, type)
         } else {
-            throw 'Unknown type format'
+            throw 'MediasFactory: Unknown type format'
         }
     }
- }
+}

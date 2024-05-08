@@ -13,20 +13,6 @@ class MediaTemplate {
         this._medias = medias
     }
 
-    createPhotographerSnippet() {
-        const wrapper = document.querySelector('.likes-and-price')
-        
-        // on calcul le nombre total de likes
-        const totalLikes = this._medias.reduce((acc, media) => acc + media.likes, 0)
-
-        const likesAndPrice = `
-            <span>${totalLikes} <i class="fa-solid fa-heart"></i></span>
-            <span>${this._photographer.price}€ / jour</span>
-        `
-
-        wrapper.innerHTML = likesAndPrice
-    }
-
     createPhotographerMedias() {
         const wrapper = document.querySelector('.medias')
         let mediaCards = ""

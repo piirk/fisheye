@@ -2,7 +2,7 @@
     display: none;
 }
 
-.photograph-header {
+.photograph-profile {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,31 +12,31 @@
     padding: 0 50px;
 }
 
-.photograph-header h1 {
+.photograph-profile h1 {
     color: #D3573C;
     font-size: 64px;
     font-weight: 400;
     margin: 0;
 }
 
-.photograph-header .sub-text {
+.photograph-profile .sub-text {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.photograph-header p {
+.photograph-profile p {
     color: #525252;
     font-size: 18px;
     margin: 0;
 }
 
-.photograph-header .text-location {
+.photograph-profile .text-location {
     color: #901C1C;
     font-size: 24px;
 }
 
-.photograph-header img {
+.photograph-profile img {
     height: 200px;
     width: 200px;
     border-radius: 100px;
