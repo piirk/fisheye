@@ -7,7 +7,7 @@ class PhotographerTemplate {
         this._photographer = photographer
     }
 
-    createPhotographerCard() {
+    getPhotographerCard() {
         const photographerCard = `
             <article>
                 <a href="photographer.html?id=${this._photographer.id}" alt="${this._photographer.name}">

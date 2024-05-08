@@ -13,7 +13,7 @@ class IndexApp {
     static init(dataArray, container) {
         dataArray.forEach(data => {
             const photographer = new Photographer(data)
-            container.innerHTML += new PhotographerTemplate(photographer).createPhotographerCard()
+            container.innerHTML += new PhotographerTemplate(photographer).getPhotographerCard()
         })
     }
 }
