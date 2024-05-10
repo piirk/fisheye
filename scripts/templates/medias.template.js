@@ -13,21 +13,23 @@ class MediasTemplate {
             
             if (type == 'image') {
                 mediaType = `
-                    <img class="card__media" src="${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">
+                    <a href="" alt="${title}" aria-label="Image nommée ${title}">
+                        <img class="card__media" src="${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">
+                    </a>
                 `
             } else {
                 mediaType = `
-                    <video class="card__media" src="${url}"></video>
+                    <a href="" alt="${title}" aria-label="Vidéo nommée ${title}">
+                        <video class="card__media" src="${url}"></video>
+                    </a>
                 `
             }
 
             mediaCards += `
                 <figure class="card">
-                    <a href="" alt="${title}">
-                        ${mediaType}
-                    </a>
+                    ${mediaType}
                     <figcaption class="card__content">
-                        <p class="card__text">${title}</p>
+                        <h3 class="card__text">${title}</h3>
                         <button class="card__likes">${likes} <i class="fa-solid fa-heart"></i></button>
                     </figcaption>
                 </figure>

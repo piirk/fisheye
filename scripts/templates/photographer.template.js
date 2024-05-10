@@ -6,8 +6,8 @@ class PhotographerTemplate {
     getPhotographerCard() {
         const photographerCard = `
             <article class="card">
-                <a href="photographer.html?id=${this._photographer.id}" alt="${this._photographer.name}">
-                    <img class="card__image" src="${this._photographer.portrait}" alt="${this._photographer.name}" />
+                <a href="photographer.html?id=${this._photographer.id}" alt="Lien vers le profile de ${this._photographer.name}">
+                    <img class="card__image" src="${this._photographer.portrait}" alt="Photo de profile de ${this._photographer.name}" />
                     <h2 class="card__name">${this._photographer.name}</h2>
                 </a>
                 <p class="card__text-location">${this._photographer.city}, ${this._photographer.country}</p>
@@ -25,7 +25,7 @@ class PhotographerTemplate {
         const profile = `
             <div class="profile__infos">
                 <h1 class="profile__name">${this._photographer.name}</h1>
-                <p class="profile__location">${this._photographer.city}, ${this._photographer.country}</p>
+                <h2 class="profile__location">${this._photographer.city}, ${this._photographer.country}</h2>
                 <p class="profile__tagline">${this._photographer.tagline}</p>
             </div>
             <button class="btn" onclick="displayModal()">Contactez-moi</button>
