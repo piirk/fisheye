@@ -5,6 +5,12 @@
 
     .card {
         @include center-flex-column(5px);
+        justify-content: space-between;
+
+        &__link {
+            @include center-flex-column;
+            flex: 1;
+        }
     
         &__image {
             display: block;
@@ -18,9 +24,11 @@
 
         &__name {
             @include center-flex-column();
+            flex: 1;
             margin: 20px 0 5px 0;
             color: #D3573C;
             font-size: 36px;
+            text-align: center;
         }
 
         &__text-location {
@@ -30,6 +38,7 @@
 
         &__text-tagline {
             font-size: 15px;
+            text-align: center;
         }
 
         &__text-price {

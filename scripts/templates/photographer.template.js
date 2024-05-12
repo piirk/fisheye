@@ -6,7 +6,7 @@ class PhotographerTemplate {
     getPhotographerCard() {
         const photographerCard = `
             <article class="card">
-                <a href="photographer.html?id=${this._photographer.id}" alt="Lien vers le profile de ${this._photographer.name}">
+                <a class="card__link" href="photographer.html?id=${this._photographer.id}" alt="Lien vers le profile de ${this._photographer.name}">
                     <img class="card__image" src="${this._photographer.portrait}" alt="Photo de profile de ${this._photographer.name}" />
                     <h2 class="card__name">${this._photographer.name}</h2>
                 </a>

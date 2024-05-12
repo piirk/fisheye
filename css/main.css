@@ -187,6 +187,15 @@ body {
   justify-content: center;
   align-items: center;
   gap: 5px;
+  justify-content: space-between;
+}
+.main .card__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  flex: 1;
 }
 .main .card__image {
   display: block;
@@ -204,9 +213,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0px;
+  flex: 1;
   margin: 20px 0 5px 0;
   color: #D3573C;
   font-size: 36px;
+  text-align: center;
 }
 .main .card__text-location {
   color: #901C1C;
@@ -214,6 +225,7 @@ body {
 }
 .main .card__text-tagline {
   font-size: 15px;
+  text-align: center;
 }
 .main .card__text-price {
   color: #757575;
