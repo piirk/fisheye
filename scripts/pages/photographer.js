@@ -8,21 +8,11 @@ class PhotographerApp {
     }
 
     static getPhotographer(photographers, id) {
-        let photographerObject = {}
-
-        photographers.forEach(photographer => {
-            if (photographer.id === id) {
-                photographerObject = new Photographer(photographer)
-            }
-        })
-
-        return photographerObject
+        return new Photographer(photographers.find(photographer => photographer.id === id))
     }
 
     static getMedias(medias, id) {
-        let mediasArrayOfObject = []
-
-        mediasArrayOfObject = medias
+        return medias
             .filter(media => media.photographerId === id)
             .map(media => {
                 if (media.image === undefined) {
@@ -31,8 +21,6 @@ class PhotographerApp {
                     return new MediasFactory(media, "image")
                 }
             })
-
-        return mediasArrayOfObject
     }
 
     static sortMedias(medias, sortBy) {
@@ -57,10 +45,7 @@ class PhotographerApp {
     }
 
     static generateMedias(medias, sortBy = "popularité") {
-        let sortedMedias = []
-
-        sortedMedias = this.sortMedias(medias, sortBy)
-
+        const sortedMedias = this.sortMedias(medias, sortBy)
         new MediasTemplate(sortedMedias).createPhotographerMedias()
     }
 }
