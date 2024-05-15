@@ -7,11 +7,9 @@ class IndexApp {
         return this._datas.getPhotographers()
     }
 
-    static init(dataArray, container) {
-        dataArray.forEach(data => {
-            const photographer = new Photographer(data)
-            container.innerHTML += new PhotographerTemplate(photographer).getPhotographerCard()
-        })
+    static init(photographers) {
+        const photographerCardsTemplate = new PhotographerCardsTemplate(photographers)
+        photographerCardsTemplate.createPhotographerCards()
     }
 }
 
@@ -19,10 +17,7 @@ class IndexApp {
 const app = new IndexApp().main()
 
 //
-const photographersWrapper = document.querySelector('.main__cards-container')
-
-//
 app.then((data) => {
     const { photographers } = data
-    IndexApp.init(photographers, photographersWrapper)
+    IndexApp.init(photographers)
 })
