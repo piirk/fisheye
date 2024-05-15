@@ -8,7 +8,7 @@ class MediasTemplate {
         let mediaCards = ""
         let mediaType = ""
 
-        this._medias.forEach(media => {
+        this.medias.forEach(media => {
             const { id, photographerId, title, url, likes, date } = media
 
             mediaType = media.generateTemplate()
@@ -25,5 +25,9 @@ class MediasTemplate {
         })
 
         wrapper.innerHTML = mediaCards
+    }
+
+    get medias() {
+        return this._medias
     }
 }

@@ -29,10 +29,7 @@ class PhotographerTemplate {
         `
     }
 
-    createPhotographerSnippet(totalLikes) {
-        document.querySelector('.snippet-container').innerHTML = `
-            <span>${totalLikes} <i class="fa-solid fa-heart"></i></span>
-            <span>${this.photographer.price}€ / jour</span>
-        `
+    get photographer() {
+        return this._photographer
     }
 }

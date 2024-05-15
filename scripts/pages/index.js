@@ -24,6 +24,5 @@ const photographersWrapper = document.querySelector('.main__cards-container')
 //
 app.then((data) => {
     const { photographers } = data
-
     IndexApp.init(photographers, photographersWrapper)
 })

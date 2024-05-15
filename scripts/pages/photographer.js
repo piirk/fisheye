@@ -74,8 +74,6 @@ const photographerId = Number(getUrlParameter("id"))
 let photographer = {}
 let medias = []
 
-let totalLikes = 0
-
 //
 app.then((data) => {
     const { photographers, media } = data
@@ -83,13 +81,12 @@ app.then((data) => {
     photographer = PhotographerApp.getPhotographer(photographers, photographerId)
     medias = PhotographerApp.getMedias(media, photographerId)
 
-    totalLikes = medias.reduce((acc, media) => acc + media.likes, 0)
-
     //
     const photographerTemplate = new PhotographerTemplate(photographer)
+    const snippetTemplate = new SnippetTemplate(photographer, medias)
 
     photographerTemplate.createProfile()
-    photographerTemplate.createPhotographerSnippet(totalLikes)
+    snippetTemplate.createSnippet()
 
     PhotographerApp.generateMedias(medias)
 
