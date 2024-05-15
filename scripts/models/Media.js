@@ -1,9 +1,7 @@
 class Media {
-    constructor(data, url, type) {
+    constructor(data) {
         this._id = data.id
         this._photographerId = data.photographerId
-        this._url = url
-        this._type = type
         this._title = data.title
         this._likes = data.likes
         this._date = data.date
@@ -16,14 +14,6 @@ class Media {
 
     get photographerId() {
         return this._photographerId
-    }
-
-    get url() {
-        return `assets/medias/${this._photographerId}/${this._url}`
-    }
-
-    get type() {
-        return this._type
     }
 
     get title() {

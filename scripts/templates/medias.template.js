@@ -9,21 +9,9 @@ class MediasTemplate {
         let mediaType = ""
 
         this._medias.forEach(media => {
-            const { id, photographerId, title, url, type, likes, date } = media
-            
-            if (type == 'image') {
-                mediaType = `
-                    <a href="" alt="${title}" aria-label="Image nommée ${title}">
-                        <img class="card__media" src="${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">
-                    </a>
-                `
-            } else {
-                mediaType = `
-                    <a href="" alt="${title}" aria-label="Vidéo nommée ${title}">
-                        <video class="card__media" src="${url}"></video>
-                    </a>
-                `
-            }
+            const { id, photographerId, title, url, likes, date } = media
+
+            mediaType = media.generateTemplate()
 
             mediaCards += `
                 <figure class="card">
