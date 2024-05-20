@@ -117,4 +117,34 @@ function addListeners() {
             originalSelect.dispatchEvent(new Event('change', { bubbles: true }))
         })
     })
+
+    // gestion des likes des médias
+    document.querySelectorAll('.card__likes').forEach(button => {
+        button.addEventListener('click', function() {
+            // incrémentation sur button + snippet
+            const likesCountButton = this.querySelector('.likes-count')
+            const likesCountSnippet = document.querySelector('.likes-count-snippet')
+            const heartIcon = this.querySelector('i')
+
+            let likes = parseInt(likesCountButton.textContent)
+            let likesTotal = parseInt(likesCountSnippet.textContent)
+
+            const isLiked = heartIcon.classList.contains('fa-solid')
+
+            if (isLiked) {
+                likes -= 1
+                likesTotal -= 1
+            } else {
+                likes += 1
+                likesTotal += 1
+            }
+
+            likesCountButton.textContent = likes
+            likesCountSnippet.textContent = likesTotal
+    
+            // changement icone
+            heartIcon.classList.toggle('fa-regular')
+            heartIcon.classList.toggle('fa-solid')
+        });
+    });
 }
