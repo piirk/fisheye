@@ -113,9 +113,11 @@ function addListeners() {
             if (isLiked) {
                 likes -= 1
                 likesTotal -= 1
+                this.setAttribute('aria-pressed', 'false')
             } else {
                 likes += 1
                 likesTotal += 1
+                this.setAttribute('aria-pressed', 'true')
             }
 
             likesCountButton.textContent = likes
