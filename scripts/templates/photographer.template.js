@@ -24,7 +24,7 @@ class PhotographerTemplate {
                 <h2 class="profile__location">${this.photographer.city}, ${this.photographer.country}</h2>
                 <p class="profile__tagline">${this.photographer.tagline}</p>
             </div>
-            <button class="btn" onclick="displayModal()">Contactez-moi</button>
+            <button id="contactModalOpen" class="btn" onclick="displayModal()">Contactez-moi</button>
             <img class="profile__image" src="${this.photographer.portrait}" alt="${this.photographer.name}">
         `
     }

@@ -97,27 +97,6 @@ function addListeners() {
         PhotographerApp.generateMedias(medias, sortBy)
     })
 
-    // gestion d'event entre select généré et select original (pour sémantique)
-    const originalSelect = document.getElementById('order-select')
-    const selectItems = document.querySelectorAll('.custom-select__items div')
-
-    selectItems.forEach(item => {
-        item.addEventListener('click', (event) => {
-            // envoi valeur choisie au <select> original
-            const selectedValue = item.textContent.toLowerCase()
-            originalSelect.value = selectedValue
-            
-            // gestion des attributs sur les <options>
-            originalSelect.querySelectorAll('option').forEach(option => {
-                option.removeAttribute('selected')
-            })
-            originalSelect.querySelector(`option[value="${selectedValue}"]`).setAttribute('selected', 'selected')
-
-            // envoi d'un event pour déclencher le listener
-            originalSelect.dispatchEvent(new Event('change', { bubbles: true }))
-        })
-    })
-
     // gestion des likes des médias
     document.querySelectorAll('.card__likes').forEach(button => {
         button.addEventListener('click', function() {

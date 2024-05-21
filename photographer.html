@@ -21,7 +21,6 @@
         <script defer src="scripts/factories/MediasFactory.js"></script>
 
         <script defer src="scripts/utils/contactForm.js"></script>
-        <script defer src="scripts/utils/customSelect.js"></script>
         <script defer src="scripts/utils/getUrlParameter.js"></script>
 
         <script defer src="scripts/templates/photographer.template.js"></script>
@@ -32,46 +31,54 @@
     </head>
 
     <body>
-        <header class="header">
+        <header class="header" role="banner">
             <a href="index.html">
                 <img src="assets/images/logo.png" class="header__logo" alt="Fisheye logo" />
             </a>
         </header>
 
-        <main id="main" class="main">
+        <main id="main" class="main" aria-hidden="false">
 
-            <div class="profile-container"></div>
+            <div class="profile-container">
+                <!-- profile du photographe -->
+            </div>
             <div class="main-container">
                 <form class="medias-form">
                     <label class="medias-form__label" for="order-select">Trier par</label>
+                    <select name="order" id="order-select">
+                        <option value="popularité">Popularité</option>
+                        <option value="date">Date</option>
+                        <option value="titre">Titre</option>
+                    </select>
+                    <!-- 
                     <div class="custom-select">
-                        <select class="hide" name="order" id="order-select">
-                            <option value="popularité">Popularité</option>
-                            <option value="date">Date</option>
-                            <option value="titre">Titre</option>
-                        </select>
-                        <!-- 
                         <div class="custom-select__selected">Popularité</div>
                         <div class="custom-select__items hide">
                             <div class="hide">Popularité</div>
                             <div>Date</div>
                             <div>Titre</div>
                         </div>
-                        -->
                     </div>
+                    -->
                 </form>
-                <div class="medias-container"></div>
-                <div class="snippet-container"></div>
+                <div class="medias-container">
+                    <!-- les médias du photographe -->
+                </div>
+                <div class="snippet-container">
+                    <!-- le snippet informatif du photographe -->
+                </div>
             </div>
 
         </main>
 
         <!-- modal contact -->
-        <div id="contact_modal" class="modal-container hide" role="dialog">
+        <div id="contact_modal" class="modal-container hide" aria-hidden="true" role="dialog" aria-describedby="contactModalTitle">
             <div class="modal">
                 <header class="modal__header">
-                    <h2 class="modal__header__title">Contactez-moi</h2>
-                    <img class="modal__header__close" src="assets/icons/close.svg" onclick="closeModal()" alt="Bouton pour fermer le formulaire"/>
+                    <h2 id="contactModalTitle" class="modal__header__title">Contactez-moi</h2>
+                    <button id="contactModalClose" onclick="closeModal()" alt="Bouton pour fermer le formulaire">
+                        <img class="modal__header__close" src="assets/icons/close.svg" />
+                    </button>
                 </header>
                 <form class="modal__form">
                     <div>
