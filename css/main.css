@@ -179,56 +179,20 @@ body {
   content: "\f078";
 }
 
-.medias-select {
-  position: relative;
+.medias-form option, .medias-form select {
   width: 170px;
-}
-.medias-select__items {
-  position: absolute;
+  font-size: 18px;
   background-color: #901C1C;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  top: calc(100% - 10px);
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-.medias-select__items div, .medias-select__selected {
   color: #ffffff;
-  font-size: 20px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  border-radius: 5px;
   font-weight: bold;
   padding: 14px 20px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  border-top: 1px solid white;
   cursor: pointer;
 }
-.medias-select__items div:hover, .medias-select__selected:hover {
+.medias-form option:hover, .medias-form select:hover {
   background-color: #D3573C;
   color: #000;
-}
-.medias-select__items div:hover::after, .medias-select__selected:hover::after {
-  color: #000;
-}
-.medias-select__selected {
-  background-color: #901C1C;
-  border-radius: 5px;
-  padding: 18px 20px;
-}
-.medias-select__selected:after {
-  position: absolute;
-  content: "\f077";
-  font-family: FontAwesome;
-  color: #fff;
-  top: 19px;
-  right: 15px;
-}
-.medias-select__arrow-active {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.medias-select__arrow-active:after {
-  content: "\f078";
 }
 
 .main__cards-container {
