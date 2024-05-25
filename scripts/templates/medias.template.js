@@ -20,7 +20,9 @@ class MediasTemplate {
 
             mediaCards += `
                 <figure class="card">
-                    <${mediaType} class="card__media" onclick="openLightBox();currentSlide(${count})" src="assets/medias/${photographerId}/${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">${(mediaType === 'video' ? '</video>' : '' )}
+                    <a href="javascript:;" onclick="openLightBox();currentSlide(${count})" tabindex="0" title="Ouvrir le média ${title} dans la light box">
+                        <${mediaType} class="card__media" src="assets/medias/${photographerId}/${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">${(mediaType === 'video' ? '</video>' : '' )}
+                    </a>
                     <figcaption class="card__content">
                         <h3 class="card__text">${title}</h3>
                         <button class="card__likes" title="Mettre un like au média ${title}" aria-pressed="false">
@@ -41,7 +43,7 @@ class MediasTemplate {
         let count = 0
 
         this.medias.forEach(media => {
-            const { photographerId, title, url, likes, date } = media
+            const { photographerId, title, url } = media
 
             const mediaType = media.generateTemplate()
             count++

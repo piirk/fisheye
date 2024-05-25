@@ -70,9 +70,10 @@ api.getPhotographerByIdWithMedias(photographerId).then(data => {
 
     // ajout des events listeners
     addListeners(app)
+    addListenersMedias()
 })
 
-// fonction pour créer tous les events listeners
+// fonction pour créer les events listeners
 function addListeners(app) {
     // eventListener pour le form de tri
     const sortForm = document.querySelector('.medias-form')
@@ -81,8 +82,11 @@ function addListeners(app) {
     sortForm.addEventListener('change', (event) => {
         const sortBy = sortBySelect.value
         app.generateMedias(sortBy)
+        addListenersMedias()
     })
+}
 
+function addListenersMedias() {
     // gestion des likes des médias
     document.querySelectorAll('.card__likes').forEach(button => {
         button.addEventListener('click', function() {
