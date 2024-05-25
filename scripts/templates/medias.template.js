@@ -3,19 +3,24 @@ class MediasTemplate {
         this._medias = medias
     }
 
+    get medias() {
+        return this._medias
+    }
+
     createPhotographerMedias() {
         const wrapper = document.querySelector('.medias-container')
         let mediaCards = ""
-        let mediaType = ""
+        let counter = 0
 
         this.medias.forEach(media => {
-            const { id, photographerId, title, url, likes, date } = media
+            const { photographerId, title, url, likes, date } = media
 
-            mediaType = media.generateTemplate()
+            const mediaType = media.generateTemplate()
+            counter++
 
             mediaCards += `
                 <figure class="card">
-                    ${mediaType}
+                    <${mediaType} class="card__media" onclick="openLightBox();currentSlide(${counter})" src="assets/medias/${photographerId}/${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">${(mediaType === 'video' ? '</video>' : '' )}
                     <figcaption class="card__content">
                         <h3 class="card__text">${title}</h3>
                         <button class="card__likes" title="Mettre un like au média ${title}" aria-pressed="false">
@@ -27,9 +32,5 @@ class MediasTemplate {
         })
 
         wrapper.innerHTML = mediaCards
-    }
-
-    get medias() {
-        return this._medias
     }
 }
