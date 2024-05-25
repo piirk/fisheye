@@ -70,7 +70,7 @@
         padding: 14px 20px;
         cursor: pointer;
 
-        &:hover {
+        &:hover, &:focus {
             background-color: #D3573C;
             color: #000;
         }

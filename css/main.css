@@ -122,7 +122,7 @@ body {
   background-color: #901C1C;
   border-radius: 5px;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
   background-color: #D3573C;
   color: #000000;
 }
@@ -190,7 +190,7 @@ body {
   padding: 14px 20px;
   cursor: pointer;
 }
-.medias-form option:hover, .medias-form select:hover {
+.medias-form option:hover, .medias-form option:focus, .medias-form select:hover, .medias-form select:focus {
   background-color: #D3573C;
   color: #000;
 }
