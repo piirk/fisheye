@@ -1,11 +1,11 @@
 class MediasFactory {
-    constructor(data, type) {
-        if (type === 'image') {
+    constructor(data) {
+        if (data.image !== undefined) {
             return new Image(data)
-        } else if (type === 'video') {
+        } else if (data.video !== undefined) {
             return new Video(data)
         } else {
-            throw 'MediasFactory: Unknown type format'
+            throw 'MediasFactory: unknown type format'
         }
     }
 }

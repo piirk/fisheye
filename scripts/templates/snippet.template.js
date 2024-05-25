@@ -5,7 +5,7 @@ class SnippetTemplate {
     }
 
     createSnippet() {
-        const totalLikes = medias.reduce((acc, media) => acc + media.likes, 0)
+        const totalLikes = this.medias.reduce((acc, media) => acc + media.likes, 0)
         document.querySelector('.snippet-container').innerHTML = `
             <p aria-label="Le photographe cumule ${totalLikes} likes">
                 <span class="likes-count-snippet">${totalLikes}</span> <i class="fa-solid fa-heart"></i>

@@ -1,23 +1,19 @@
 class IndexApp {
-    constructor() {
-        this._datas = new PhotographersApi('./data/photographers.json')
+    constructor(data) {
+        this._photographers = data
     }
 
-    async main() {
-        return this._datas.getPhotographers()
-    }
-
-    static init(photographers) {
-        const photographerCardsTemplate = new PhotographerCardsTemplate(photographers)
+    init() {
+        const photographerCardsTemplate = new PhotographerCardsTemplate(this._photographers)
         photographerCardsTemplate.createPhotographerCards()
     }
 }
 
 //
-const app = new IndexApp().main()
+const api = new Api('./data/photographers.json')
 
 //
-app.then((data) => {
-    const { photographers } = data
-    IndexApp.init(photographers)
+api.getPhotographers().then((data) => {
+    const app = new IndexApp(data)
+    app.init()
 })

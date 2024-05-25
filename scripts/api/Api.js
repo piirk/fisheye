@@ -3,20 +3,22 @@ class Api {
         this._url = url
     }
 
-    async get() {
-        
-        return fetch(this._url)
-            .then(res => res.json())
-            .catch(err => console.log('an error occurs', err))
-    }
-}
-
-class PhotographersApi extends Api {
-    constructor(url) {
-        super(url)
-    }
-
     async getPhotographers() {
-        return await this.get()
+        const response = await fetch(this._url)
+        const data = await response.json()
+        const { photographers } = data
+
+        return photographers
+    }
+
+    async getPhotographerByIdWithMedias(photographerId) {
+        const response = await fetch(this._url)
+        const data = await response.json()
+        const { photographers, media } = data
+
+        const photographer = photographers.find(el => el.id === photographerId)
+        const medias = media.filter(el => el.photographerId == photographerId)
+        
+        return { photographer, medias }
     }
 }

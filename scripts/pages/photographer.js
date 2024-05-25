@@ -1,42 +1,32 @@
 class PhotographerApp {
-    constructor() {
-        this._datas = new PhotographersApi('./data/photographers.json')
+    constructor(photographer, medias) {
+        this._photographer = new Photographer(photographer)
+        this._medias = medias.map(media => { return new MediasFactory(media) })
     }
 
-    async main() {
-        return this._datas.getPhotographers()
+    
+    get photographer() {
+        return this._photographer
     }
 
-    static getPhotographer(photographers, id) {
-        return new Photographer(photographers.find(photographer => photographer.id === id))
+    get medias() {
+        return this._medias
     }
 
-    static getMedias(medias, id) {
-        return medias
-            .filter(media => media.photographerId === id)
-            .map(media => {
-                if (media.image === undefined) {
-                    return new MediasFactory(media, "video")
-                } else {
-                    return new MediasFactory(media, "image")
-                }
-            })
-    }
-
-    static sortMedias(medias, sortBy) {
+    sortMedias(sortBy) {
         let sortedMedias = [];
-
+        
         switch (sortBy) {
             case "titre": {
-                sortedMedias = medias.sort((a, b) => a.title.localeCompare(b.title))
+                sortedMedias = this.medias.sort((a, b) => a.title.localeCompare(b.title))
                 break
             }
             case "popularité": {
-                sortedMedias = medias.sort((a, b) => b.likes - a.likes)
+                sortedMedias = this.medias.sort((a, b) => b.likes - a.likes)
                 break
             }
             case "date": {
-                sortedMedias = medias.sort((a, b) => new Date(b.date) - new Date(a.date))
+                sortedMedias = this.medias.sort((a, b) => new Date(b.date) - new Date(a.date))
                 break
             }
         }
@@ -44,36 +34,29 @@ class PhotographerApp {
         return sortedMedias;
     }
 
-    static generateMedias(medias, sortBy = "popularité") {
-        const sortedMedias = this.sortMedias(medias, sortBy)
+    generateMedias(sortBy = "popularité") {
+        const sortedMedias = this.sortMedias(sortBy)
         new MediasTemplate(sortedMedias).createPhotographerMedias()
     }
 }
 
 //
-const app = new PhotographerApp().main()
-
-//
+const api = new Api('./data/photographers.json')
 const photographerId = Number(getUrlParameter("id"))
 
-let photographer = {}
-let medias = []
-
 //
-app.then((data) => {
-    const { photographers, media } = data
+api.getPhotographerByIdWithMedias(photographerId).then(data => {
+    let { photographer, medias } = data
     
-    photographer = PhotographerApp.getPhotographer(photographers, photographerId)
-    medias = PhotographerApp.getMedias(media, photographerId)
+    const app = new PhotographerApp(photographer, medias)
 
-    //
-    const photographerTemplate = new PhotographerTemplate(photographer)
-    const snippetTemplate = new SnippetTemplate(photographer, medias)
+    const photographerTemplate = new PhotographerTemplate(app.photographer)
+    const snippetTemplate = new SnippetTemplate(app.photographer, app.medias)
 
     photographerTemplate.createProfile()
     snippetTemplate.createSnippet()
 
-    PhotographerApp.generateMedias(medias)
+    app.generateMedias()
 
     //
     const titleMetaTag = document.querySelector("title")
@@ -83,18 +66,18 @@ app.then((data) => {
     contactTitle.innerHTML = `Contactez-moi<br />${photographer.name}`
 
     // ajout des events listeners
-    addListeners()
+    addListeners(app)
 })
 
 // fonction pour créer tous les events listeners
-function addListeners() {
+function addListeners(app) {
     // eventListener pour le form de tri
     const sortForm = document.querySelector('.medias-form')
     const sortBySelect = document.getElementById('order-select')
 
     sortForm.addEventListener('change', (event) => {
         const sortBy = sortBySelect.value
-        PhotographerApp.generateMedias(medias, sortBy)
+        app.generateMedias(sortBy)
     })
 
     // gestion des likes des médias
