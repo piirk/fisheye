@@ -36,7 +36,10 @@ class PhotographerApp {
 
     generateMedias(sortBy = "popularité") {
         const sortedMedias = this.sortMedias(sortBy)
-        new MediasTemplate(sortedMedias).createPhotographerMedias()
+        const mediasTemplate = new MediasTemplate(sortedMedias)
+
+        mediasTemplate.createPhotographerMedias()
+        mediasTemplate.createLightBoxMedias()
     }
 }
 

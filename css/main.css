@@ -344,6 +344,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
+  cursor: pointer;
 }
 .card__content {
   width: 100%;
@@ -437,4 +438,69 @@ body {
   border-radius: 5px;
   font-size: 22px;
   padding: 5px 10px;
+}
+
+.lightbox {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+.lightbox__content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1400px;
+}
+.lightbox__close {
+  color: #901C1C;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 60px;
+  font-weight: bold;
+}
+.lightbox__close:hover, .lightbox__close:focus {
+  color: #D3573C;
+  text-decoration: none;
+}
+.lightbox__prev, .lightbox__next {
+  position: absolute;
+  top: 50%;
+  left: -50px;
+  width: auto;
+  padding: 10px;
+  margin-top: -50px;
+  color: #901C1C;
+  font-weight: bold;
+  font-size: 42px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -moz-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+.lightbox__prev:hover, .lightbox__prev:focus, .lightbox__next:hover, .lightbox__next:focus {
+  color: #D3573C;
+}
+.lightbox__next {
+  left: auto;
+  right: -50px;
+  border-radius: 3px 0 0 3px;
+}
+.lightbox__slide {
+  width: 100%;
+  border-radius: 5px;
+}
+.lightbox__caption-container {
+  text-align: left;
+  padding: 6px 0;
+  color: #901C1C;
+  font-size: 24px;
 }/*# sourceMappingURL=main.css.map */
