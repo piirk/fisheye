@@ -15,7 +15,6 @@ function openLightBox() {
     trapFocus(modal)
 }
 
-// Close the Modal
 function closeLightBox() {
     const modal = document.getElementById("lightbox_modal")
     const mainWrapper = document.getElementById("main")
@@ -48,20 +47,18 @@ document.addEventListener('keydown', function(e) {
 
 let slideIndex = 1
 
-// Next/previous controls
+// gestion next/prev controles
 function plusSlides(n) {
     showSlides(slideIndex += n)
 }
 
-// Thumbnail image controls
+// ouvrir la slide selectionnée
 function currentSlide(n) {
     showSlides(slideIndex = n)
 }
 
 function showSlides(n) {
-    var i
-    var slides = document.getElementsByClassName("mySlides")
-    var captionText = document.getElementById("lightBoxCaption")
+    const slides = document.getElementsByClassName("mySlides")
 
     if (n > slides.length) {
         slideIndex = 1
@@ -71,10 +68,10 @@ function showSlides(n) {
         slideIndex = slides.length
     }
 
-    for (i = 0; i < slides.length; i++) {
+    for (let i = 0; i < slides.length; i++) {
         slides[i].classList.add("hide")
     }
     
     slides[slideIndex-1].classList.remove("hide")
-    captionText.innerHTML = slides[slideIndex-1].children[0].getAttribute('alt')
+    document.getElementById("lightBoxCaption").innerHTML = slides[slideIndex-1].children[0].getAttribute('alt')
 }
