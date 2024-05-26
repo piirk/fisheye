@@ -1,4 +1,4 @@
-function openLightBox() {
+function openLightBox(element) {
     const modal = document.getElementById("lightbox_modal")
     const mainWrapper = document.getElementById("main")
     const snippet = document.querySelector(".snippet-container")
@@ -12,6 +12,8 @@ function openLightBox() {
     modal.classList.remove("hide")
     modalCloseBtn.focus()
 
+    openingSlide = element
+
     trapFocus(modal)
 }
 
@@ -20,12 +22,14 @@ function closeLightBox() {
     const mainWrapper = document.getElementById("main")
     const snippet = document.querySelector(".snippet-container")
     const body = document.getElementsByTagName("body")[0]
-    
+
     mainWrapper.setAttribute('aria-hidden', 'false')
     modal.setAttribute('aria-hidden', 'true')
     body.classList.remove('no-scroll')
     snippet.classList.remove("hide")
     modal.classList.add("hide")
+
+    openingSlide.focus()
 }
 
 // quand clique échap, ferme la modal si ouverte + right> and left<

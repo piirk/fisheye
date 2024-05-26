@@ -64,6 +64,7 @@ api.getPhotographerByIdWithMedias(photographerId).then(data => {
     //
     const titleMetaTag = document.querySelector("title")
     const contactTitle = document.querySelector(".modal__header__title")
+    let openingSlide = {}
 
     titleMetaTag.textContent = `Fisheye - ${photographer.name}`
     contactTitle.innerHTML = `Contactez-moi<br />${photographer.name}`

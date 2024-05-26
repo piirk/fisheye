@@ -20,7 +20,7 @@ class MediasTemplate {
 
             mediaCards += `
                 <figure class="card">
-                    <a href="javascript:;" onclick="openLightBox();currentSlide(${count})" tabindex="0" title="Ouvrir le média ${title} dans la light box">
+                    <a href="javascript:;" onclick="openLightBox(this);currentSlide(${count})" tabindex="0" title="Ouvrir le média ${title} dans la light box">
                         <${mediaType} class="card__media" src="assets/medias/${photographerId}/${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">${(mediaType === 'video' ? '</video>' : '' )}
                     </a>
                     <figcaption class="card__content">
