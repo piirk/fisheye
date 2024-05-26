@@ -28,15 +28,6 @@ function closeModal() {
     modalOpenBtn.focus()
 }
 
-// quand clique échap, ferme la modal si ouverte
-document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById('contact_modal')
-    
-    if (modal.getAttribute('aria-hidden') == 'false' && e.key === 'Escape') {
-        closeModal()
-    }
- })
-
  // submit form
  document.getElementById('contactForm').addEventListener('submit', function(e) {
     // empecher submit par défaut

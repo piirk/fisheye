@@ -32,25 +32,6 @@ function closeLightBox() {
     openingSlide.focus()
 }
 
-// quand clique échap, ferme la modal si ouverte + right> and left<
-document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById("lightbox_modal")
-    
-    if (modal.getAttribute('aria-hidden') == 'false' && e.key === "Escape") {
-        closeLightBox()
-    }
-
-    if (modal.getAttribute('aria-hidden') == 'false' && e.key === "ArrowLeft") {
-        document.querySelector(".lightbox__prev").click()
-    }
-
-    if (modal.getAttribute('aria-hidden') == 'false' && e.key === "ArrowRight") {
-        document.querySelector(".lightbox__next").click()
-    }
- })
-
-let slideIndex = 1
-
 // gestion next/prev controles
 function plusSlides(n) {
     showSlides(slideIndex += n)

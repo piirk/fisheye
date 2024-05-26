@@ -64,17 +64,21 @@ api.getPhotographerByIdWithMedias(photographerId).then(data => {
     //
     const titleMetaTag = document.querySelector("title")
     const contactTitle = document.querySelector(".modal__header__title")
+
+    // var pour lightbox
     let openingSlide = {}
+    let slideIndex = 1
 
     titleMetaTag.textContent = `Fisheye - ${photographer.name}`
     contactTitle.innerHTML = `Contactez-moi<br />${photographer.name}`
 
     // ajout des events listeners
     addListeners(app)
-    addListenersMedias()
+    addListenersLikes()
+    addListenersKeyboard()
 })
 
-// fonction pour créer les events listeners
+// fct créer les events listeners
 function addListeners(app) {
     // eventListener pour le form de tri
     const sortForm = document.querySelector('.medias-form')
@@ -83,12 +87,12 @@ function addListeners(app) {
     sortForm.addEventListener('change', (event) => {
         const sortBy = sortBySelect.value
         app.generateMedias(sortBy)
-        addListenersMedias()
+        addListenersLikes()
     })
 }
 
-function addListenersMedias() {
-    // gestion des likes des médias
+// fct gestion des likes des médias
+function addListenersLikes() {
     document.querySelectorAll('.card__likes').forEach(button => {
         button.addEventListener('click', function() {
             // incrémentation sur button + snippet
@@ -119,4 +123,29 @@ function addListenersMedias() {
             heartIcon.classList.toggle('fa-solid')
         });
     });
+}
+
+// fct créer listeners keyboard shortcuts
+function addListenersKeyboard() {
+    document.addEventListener('keydown', function(e) {
+        // lightbox: escape, left arrow, right arrow
+        const lightBox = document.getElementById("lightbox_modal")
+        
+        if (lightBox.getAttribute('aria-hidden') == 'false' && e.key === "Escape") {
+            closeLightBox()
+        }
+        if (lightBox.getAttribute('aria-hidden') == 'false' && e.key === "ArrowLeft") {
+            document.querySelector(".lightbox__prev").click()
+        }
+        if (lightBox.getAttribute('aria-hidden') == 'false' && e.key === "ArrowRight") {
+            document.querySelector(".lightbox__next").click()
+        }
+
+        // contact form: escape
+        const modal = document.getElementById('contact_modal')
+    
+        if (modal.getAttribute('aria-hidden') == 'false' && e.key === 'Escape') {
+            closeModal()
+        }
+    })
 }
