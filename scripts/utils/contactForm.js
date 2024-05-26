@@ -18,11 +18,13 @@ function closeModal() {
     const mainWrapper = document.getElementById("main")
     const body = document.getElementsByTagName("body")[0]
     const modalOpenBtn = document.getElementById("contactModalOpen")
+    const form = document.querySelector(".modal__form")
 
     mainWrapper.setAttribute('aria-hidden', 'false')
     modal.setAttribute('aria-hidden', 'true')
     body.classList.remove('no-scroll')
     modal.classList.add("hide")
+    form.reset()
     modalOpenBtn.focus()
 }
 
