@@ -17,11 +17,12 @@
         <script defer src="scripts/models/Photographer.js"></script>
         <script defer src="scripts/models/Image.js"></script>
         <script defer src="scripts/models/Video.js"></script>
+        <script defer src="scripts/models/LightBoxManager.js"></script>
+        
 
         <script defer src="scripts/factories/MediasFactory.js"></script>
         
         <script defer src="scripts/utils/trapFocus.js"></script>
-        <script defer src="scripts/utils/lightBoxMedias.js"></script>
         <script defer src="scripts/utils/contactForm.js"></script>
         <script defer src="scripts/utils/getUrlParameter.js"></script>
 
@@ -65,9 +66,9 @@
 
         <!-- modal lightbox -->
         <div id="lightbox_modal" class="lightbox hide" aria-hidden="true" role="dialog">
-            <button class="lightbox__close" onclick="closeLightBox()">&times;</button>
+            <button class="lightbox__close" onclick="lightBoxManager.close()">&times;</button>
             <div class="lightbox__content">
-                
+                <!-- lightbox content -->
             </div>
         </div>
 

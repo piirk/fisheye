@@ -14,6 +14,8 @@ class PhotographerApp {
     }
 
     init() {
+        
+
         this.generateProfile()
         this.generateSnippet()
         this.generateMedias()
@@ -108,7 +110,7 @@ class PhotographerApp {
             const lightBox = document.getElementById("lightbox_modal")
             
             if (lightBox.getAttribute('aria-hidden') == 'false' && e.key === "Escape") {
-                closeLightBox()
+                lightBoxManager.close()
             }
             if (lightBox.getAttribute('aria-hidden') == 'false' && e.key === "ArrowLeft") {
                 document.querySelector(".lightbox__prev").click()
@@ -130,13 +132,10 @@ class PhotographerApp {
 //
 const api = new Api('./data/photographers.json')
 const photographerId = Number(getUrlParameter("id"))
+const lightBoxManager = new LightBoxManager()
 
 //
 api.getPhotographerByIdWithMedias(photographerId).then(data => {
     const app = new PhotographerApp(data.photographer, data.medias)
     app.init()
-
-    // var pour lightbox
-    let openingSlide = {}
-    let slideIndex = 1
 })

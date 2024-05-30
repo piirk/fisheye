@@ -19,7 +19,7 @@ class MediasTemplate {
 
             mediaCards += `
                 <figure class="card">
-                    <a href="javascript:;" onclick="openLightBox(this);currentSlide(${count})" tabindex="0" title="Ouvrir le média ${title} dans la light box">
+                    <a href="javascript:;" onclick="lightBoxManager.open(this);lightBoxManager.currentSlide(${count})" tabindex="0" title="Ouvrir le média ${title} dans la light box">
                         ${mediaType}
                     </a>
                     <figcaption class="card__content">
@@ -45,14 +45,6 @@ class MediasTemplate {
             const mediaType = media.generateTemplateLightBox()
             count++
 
-            // pour vidéo
-            /*
-                <video class="lightbox__slide" controls>
-                    <source src="assets/medias/${photographerId}/${this.url}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>`
-            */
-
             lightBoxContent += `
                 <div class="mySlides hide">
                     ${mediaType}
@@ -61,8 +53,8 @@ class MediasTemplate {
         })
 
         lightBoxContent += `
-            <button class="lightbox__prev" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="lightbox__next" onclick="plusSlides(1)">&#10095;</button>
+            <button class="lightbox__prev" onclick="lightBoxManager.plusSlides(-1)">&#10094;</button>
+            <button class="lightbox__next" onclick="lightBoxManager.plusSlides(1)">&#10095;</button>
 
             <div class="lightbox__caption-container">
                 <p id="lightBoxCaption"></p>
