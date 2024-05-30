@@ -110,7 +110,7 @@ class PhotographerApp {
             const lightBox = document.getElementById("lightbox_modal")
             
             if (lightBox.getAttribute('aria-hidden') == 'false' && e.key === "Escape") {
-                lightBoxManager.close()
+                document.querySelector(".lightbox__close").click()
             }
             if (lightBox.getAttribute('aria-hidden') == 'false' && e.key === "ArrowLeft") {
                 document.querySelector(".lightbox__prev").click()
@@ -123,7 +123,7 @@ class PhotographerApp {
             const modal = document.getElementById('contact_modal')
         
             if (modal.getAttribute('aria-hidden') == 'false' && e.key === 'Escape') {
-                closeModal()
+                document.getElementById("contactModalClose").click()
             }
         })
     }
