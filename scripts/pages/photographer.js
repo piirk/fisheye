@@ -133,9 +133,7 @@ const photographerId = Number(getUrlParameter("id"))
 
 //
 api.getPhotographerByIdWithMedias(photographerId).then(data => {
-    let { photographer, medias } = data
-    
-    const app = new PhotographerApp(photographer, medias)
+    const app = new PhotographerApp(data.photographer, data.medias)
     app.init()
 
     // var pour lightbox
