@@ -8,7 +8,6 @@ class MediasTemplate {
     }
 
     createPhotographerMedias() {
-        const wrapper = document.querySelector('.medias-container')
         let mediaCards = ""
         let count = 0
 
@@ -21,7 +20,7 @@ class MediasTemplate {
             mediaCards += `
                 <figure class="card">
                     <a href="javascript:;" onclick="openLightBox(this);currentSlide(${count})" tabindex="0" title="Ouvrir le média ${title} dans la light box">
-                        <${mediaType} class="card__media" src="assets/medias/${photographerId}/${url}" alt="'${title} fait en ${new Date(date).getFullYear()}'">${(mediaType === 'video' ? '</video>' : '' )}
+                        ${mediaType}
                     </a>
                     <figcaption class="card__content">
                         <h3 class="card__text">${title}</h3>
@@ -33,24 +32,30 @@ class MediasTemplate {
             `
         })
 
-        wrapper.innerHTML = mediaCards
+        document.querySelector('.medias-container').innerHTML = mediaCards
     }
 
     createLightBoxMedias() {
-        const wrapper = document.querySelector('.lightbox__content')
-
         let lightBoxContent = ""
         let count = 0
 
         this.medias.forEach(media => {
             const { photographerId, title, url } = media
 
-            const mediaType = media.generateTemplate()
+            const mediaType = media.generateTemplateLightBox()
             count++
+
+            // pour vidéo
+            /*
+                <video class="lightbox__slide" controls>
+                    <source src="assets/medias/${photographerId}/${this.url}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>`
+            */
 
             lightBoxContent += `
                 <div class="mySlides hide">
-                    <${mediaType} class="lightbox__slide" src="assets/medias/${photographerId}/${url}" alt="${title}">${(mediaType === 'video' ? '</video>' : '' )}
+                    ${mediaType}
                 </div>
             `
         })
@@ -64,6 +69,6 @@ class MediasTemplate {
             </div>
         `
 
-        wrapper.innerHTML = lightBoxContent
+        document.querySelector('.lightbox__content').innerHTML = lightBoxContent
     }
 }

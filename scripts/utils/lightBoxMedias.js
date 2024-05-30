@@ -1,3 +1,5 @@
+// class todo: lightBoxMedias
+
 function openLightBox(element) {
     const modal = document.getElementById("lightbox_modal")
     const mainWrapper = document.getElementById("main")

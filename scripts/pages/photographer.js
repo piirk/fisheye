@@ -61,16 +61,13 @@ api.getPhotographerByIdWithMedias(photographerId).then(data => {
 
     app.generateMedias()
 
-    //
-    const titleMetaTag = document.querySelector("title")
-    const contactTitle = document.querySelector(".modal__header__title")
-
     // var pour lightbox
     let openingSlide = {}
     let slideIndex = 1
 
-    titleMetaTag.textContent = `Fisheye - ${photographer.name}`
-    contactTitle.innerHTML = `Contactez-moi<br />${photographer.name}`
+    //
+    document.querySelector("title").textContent = `Fisheye - ${photographer.name}`
+    document.querySelector(".modal__header__title").innerHTML = `Contactez-moi<br />${photographer.name}`
 
     // ajout des events listeners
     addListeners(app)
