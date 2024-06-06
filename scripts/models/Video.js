@@ -1,15 +1,15 @@
 class Video extends Media {
     constructor(data) {
-        super(data)
-        this._url = data.video
+        super(data);
+        this._url = data.video;
     }
 
     get url() {
-        return this._url
+        return this._url;
     }
 
-    generateTemplate() {
-        return `<video class="card__media" src="assets/medias/${this._photographerId}/${this._url}" alt="${this._title} fait en ${new Date(this._date).getFullYear()}"></video>`
+    generateTemplateThumbnail() {
+        return `<video class="card__media" src="assets/medias/${this._photographerId}/${this._url}" alt="${this._title} fait en ${new Date(this._date).getFullYear()}"></video>`;
     }
 
     generateTemplateLightBox() {
@@ -18,6 +18,6 @@ class Video extends Media {
             <source src="assets/medias/${this._photographerId}/${this._url}" type="video/mp4">
             Votre naviguateur ne peut pas lire la vidéo.
         </video>
-        `
+        `;
     }
 }

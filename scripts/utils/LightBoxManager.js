@@ -61,4 +61,5 @@ class LightBoxManager {
     slides[this._slideIndex-1].classList.remove("hide")
     document.getElementById("lightBoxCaption").innerHTML = slides[this._slideIndex-1].children[0].getAttribute('alt')
   }
+
 }

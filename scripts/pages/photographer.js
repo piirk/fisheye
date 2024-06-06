@@ -14,8 +14,6 @@ class PhotographerApp {
     }
 
     init() {
-        
-
         this.generateProfile()
         this.generateSnippet()
         this.generateMedias()
@@ -58,9 +56,9 @@ class PhotographerApp {
     }
 
     generateMedias(sortBy = "popularité") {
-        const mediasTemplate = new MediasTemplate(this.sortMedias(sortBy))
-        mediasTemplate.createPhotographerMedias()
-        mediasTemplate.createLightBoxMedias()
+        const mediasTemplate = new MediasTemplate(this.sortMedias(sortBy));
+        mediasTemplate.createPhotographerThumbnails();
+        mediasTemplate.createLightBoxMedias();
     }
 
     // listeners pour le formulaire de tri
