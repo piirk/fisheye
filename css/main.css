@@ -440,6 +440,14 @@ body {
   font-size: 22px;
   padding: 5px 10px;
 }
+.modal__form__error {
+  height: 16px;
+  color: #b30606;
+  font-size: 16px;
+}
+.modal__form .error {
+  outline: 1px solid #e91818;
+}
 
 .lightbox {
   position: fixed;

@@ -167,6 +167,16 @@
             font-size: 22px;
             padding: 5px 10px;
         }
+
+        &__error {
+            height: 16px;
+            color: #b30606;
+            font-size: 16px;
+        }
+
+        .error {
+            outline: 1px solid #e91818;
+        }
     }
 }
 
