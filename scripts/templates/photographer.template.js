@@ -1,22 +1,22 @@
+/**
+ * @class PhotographerTemplate
+ * @description Gestion des templates pour les photographes
+ */
 class PhotographerTemplate {
+    /**
+     * @param {Photographer} photographer - photographe
+     */
     constructor(photographer) {
-        this._photographer = photographer
+        this._photographer = photographer;
     }
 
-    getPhotographerCard() {
-        return `
-            <article class="card">
-                <a class="card__link" href="photographer.html?id=${this.photographer.id}" alt="Lien vers le profile de ${this.photographer.name}">
-                    <img class="card__image" src="${this.photographer.portrait}" alt="Photo de profile de ${this.photographer.name}" />
-                    <h2 class="card__name">${this.photographer.name}</h2>
-                </a>
-                <p class="card__text-location">${this.photographer.city}, ${this.photographer.country}</p>
-                <p class="card__text-tagline">${this.photographer.tagline}</p>
-                <p class="card__text-price">${this.photographer.price}€/jour</p>
-            </article>
-        `
+    get photographer() {
+        return this._photographer;
     }
 
+    /**
+     * Création du profil du photographe sur la page photographe (photographer.html)
+     */
     createProfile() {
         document.querySelector('.profile-container').innerHTML = `
             <div class="profile__infos">
@@ -26,10 +26,6 @@ class PhotographerTemplate {
             </div>
             <button id="contactModalOpen" class="btn" onclick="displayModal()">Contactez-moi</button>
             <img class="profile__image" src="${this.photographer.portrait}" alt="${this.photographer.name}">
-        `
-    }
-
-    get photographer() {
-        return this._photographer
+        `;
     }
 }

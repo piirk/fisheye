@@ -459,19 +459,7 @@ body {
   max-width: 1400px;
   text-align: center;
 }
-.lightbox__close {
-  color: #901C1C;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 60px;
-  font-weight: bold;
-}
-.lightbox__close:hover, .lightbox__close:focus {
-  color: #D3573C;
-  text-decoration: none;
-}
-.lightbox__prev, .lightbox__next {
+.lightbox__content__prev, .lightbox__content__next {
   position: absolute;
   top: 50%;
   left: -50px;
@@ -487,13 +475,31 @@ body {
        user-select: none;
   -webkit-user-select: none;
 }
-.lightbox__prev:hover, .lightbox__prev:focus, .lightbox__next:hover, .lightbox__next:focus {
+.lightbox__content__prev:hover, .lightbox__content__prev:focus, .lightbox__content__next:hover, .lightbox__content__next:focus {
   color: #D3573C;
 }
-.lightbox__next {
+.lightbox__content__next {
   left: auto;
   right: -50px;
   border-radius: 3px 0 0 3px;
+}
+.lightbox__content__caption {
+  text-align: left;
+  padding: 6px 0 25px 0;
+  color: #901C1C;
+  font-size: 24px;
+}
+.lightbox__close {
+  color: #901C1C;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 60px;
+  font-weight: bold;
+}
+.lightbox__close:hover, .lightbox__close:focus {
+  color: #D3573C;
+  text-decoration: none;
 }
 .lightbox__slide {
   max-width: 100%;
@@ -502,10 +508,4 @@ body {
      object-fit: contain;
   border-radius: 5px;
   margin: auto;
-}
-.lightbox__caption-container {
-  text-align: left;
-  padding: 6px 0 25px 0;
-  color: #901C1C;
-  font-size: 24px;
 }/*# sourceMappingURL=main.css.map */

@@ -23,7 +23,7 @@
         <script defer src="scripts/utils/trapFocus.js"></script>
         <script defer src="scripts/utils/contactForm.js"></script>
         <script defer src="scripts/utils/getUrlParameter.js"></script>
-        <script defer src="scripts/utils/LightBoxManager.js"></script>
+        <script defer src="scripts/utils/LightboxManager.js"></script>
 
         <script defer src="scripts/templates/photographer.template.js"></script>
         <script defer src="scripts/templates/medias.template.js"></script>
@@ -65,9 +65,20 @@
 
         <!-- modal lightbox -->
         <div id="lightbox_modal" class="lightbox hide" aria-hidden="true" role="dialog">
-            <button class="lightbox__close" onclick="lightBoxManager.close()">&times;</button>
+            <button class="lightbox__close">&times;</button>
             <div class="lightbox__content">
-                <!-- lightbox content -->
+
+                <div class="lightbox__content__slides">
+                    <!-- slides -->
+                </div>
+
+                <button class="lightbox__content__prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="lightbox__content__next"><i class="fas fa-chevron-right"></i></button>
+
+                <div class="lightbox__content__caption">
+                    <p id="lightboxCaption"></p>
+                </div>
+                
             </div>
         </div>
 

@@ -1,4 +1,11 @@
+/**
+ * @class MediasTemplate
+ * @description Classe permettant de générer le template des médias
+ */
 class MediasTemplate {
+    /**
+     * @param {Array<Media>} medias - liste des médias
+     */
     constructor(medias) {
         this._medias = medias;
     }
@@ -7,13 +14,16 @@ class MediasTemplate {
         return this._medias;
     }
 
+    /**
+     * Création de la liste des médias du photographe
+     */
     createPhotographerThumbnails() {
         let thumbnails = '';
 
-        this.medias.forEach((media, index) => {
+        this.medias.forEach(media => {
             thumbnails += `
                 <figure class="card">
-                    <a href="javascript:;" onclick="lightBoxManager.open(this);lightBoxManager.currentSlide(${index + 1})" tabindex="0" title="Ouvrir le média ${media.title} dans la light box">
+                    <a href="javascript:;" tabindex="0" title="Ouvrir le média ${media.title} dans la light box" data-type="media" data-id=${media.id}>
                         ${media.generateTemplateThumbnail()}
                     </a>
                     <figcaption class="card__content">
@@ -27,28 +37,5 @@ class MediasTemplate {
         });
 
         document.querySelector('.medias-container').innerHTML = thumbnails;
-    }
-
-    createLightBoxMedias() {
-        let lightBoxContent = '';
-
-        this._medias.forEach(media => {
-            lightBoxContent += `
-                <div class="mySlides hide">
-                    ${media.generateTemplateLightBox()}
-                </div>
-            `;
-        });
-
-        lightBoxContent += `
-            <button class="lightbox__prev" onclick="lightBoxManager.plusSlides(-1)">&#10094;</button>
-            <button class="lightbox__next" onclick="lightBoxManager.plusSlides(1)">&#10095;</button>
-
-            <div class="lightbox__caption-container">
-                <p id="lightBoxCaption"></p>
-            </div>
-        `;
-
-        document.querySelector('.lightbox__content').innerHTML = lightBoxContent;
     }
 }

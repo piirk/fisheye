@@ -1,14 +1,27 @@
+/**
+ * @class PhotographerCardsTemplate
+ * @description Création des cartes des photographes sur la page d'accueil (index.html)
+ */
 class PhotographerCardsTemplate {
+    /**
+     * @param {Array} photographers - Données des photographes
+     */
     constructor(photographers) {
-        this._photographers = photographers
+        this._photographers = photographers;
     }
 
+    get photographers() {
+        return this._photographers;
+    }
+
+    /**
+     * Création des cartes des photographes sur la page d'accueil (index.html)
+     */
     createPhotographerCards() {
-        const wrapper = document.querySelector('.main__cards-container')
-        let photographerCards = ""
+        let photographerCards = '';
 
         this.photographers.forEach(data => {
-            const photographer = new Photographer(data)
+            const photographer = new Photographer(data);
 
             photographerCards += `
                 <article class="card">
@@ -20,13 +33,9 @@ class PhotographerCardsTemplate {
                     <p class="card__text-tagline">${photographer.tagline}</p>
                     <p class="card__text-price">${photographer.price}€/jour</p>
                 </article>
-            `
+            `;
         })
 
-        wrapper.innerHTML = photographerCards
-    }
-
-    get photographers() {
-        return this._photographers
+        document.querySelector('.main__cards-container').innerHTML = photographerCards;
     }
 }
