@@ -335,14 +335,14 @@ body {
 }
 .main .main-container .medias-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 31%);
   gap: 20px;
   justify-content: space-between;
   padding: 20px 0;
 }
 @media (max-width: 1400px) {
   .main .main-container .medias-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 49%);
   }
 }
 @media (max-width: 992px) {

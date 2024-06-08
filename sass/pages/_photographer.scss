@@ -37,12 +37,12 @@
         padding: 0 100px;
 
         .medias-container {
-            @include grid-columns(3, 1fr, 20px);
+            @include grid-columns(3, 31%, 20px);
             justify-content: space-between;
             padding: 20px 0;
 
             @include respond(xl) {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 49%);
             }
 
             @include respond(md) {
