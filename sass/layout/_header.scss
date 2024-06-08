@@ -1,7 +1,6 @@
 .header {
     @include center-flex;
     justify-content: space-between;
-    height: 90px;
     margin-bottom: 50px;
     padding: 0 100px;
 
@@ -24,6 +23,7 @@
 
     @include respond(md) {
         padding: 0 40px;
+        flex-direction: column;
     }
 
     @include respond(sm) {

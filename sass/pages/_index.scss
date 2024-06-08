@@ -1,6 +1,15 @@
 .main {
     &__cards-container {
         @include grid(1, 3, 70px);
+        margin-bottom: 50px;
+
+        @include respond(lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond(sm) {
+            grid-template-columns: 1fr;
+        }
 
         .card {
             @include center-flex-column(5px);
