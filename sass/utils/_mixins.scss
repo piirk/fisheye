@@ -33,3 +33,23 @@
     left: 50%;
     translate: -50% -50%;
 }
+
+// break points variables for media queries with max-width
+$breakpoints: (
+    xs: 576px,
+    sm: 768px,
+    md: 992px,
+    lg: 1200px,
+    xl: 1400px
+);
+
+// media queries mixin
+@mixin respond($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "Invalid breakpoint: #{$breakpoint}.";
+    }
+}

@@ -22,7 +22,7 @@ class Image extends Media {
      * @returns {string} - HTML template
      */
     generateTemplateThumbnail() {
-        return `<img class="card__media" src="assets/medias/${this._photographerId}/${this._url}" alt="${this._title} fait en ${new Date(this._date).getFullYear()}">`;
+        return `<img class="card__media" src="assets/medias/${this._photographerId}/thumbnails/${this._url}" alt="${this._title} fait en ${new Date(this._date).getFullYear()}">`;
     }
 
     /**
