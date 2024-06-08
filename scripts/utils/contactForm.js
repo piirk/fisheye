@@ -25,6 +25,12 @@ function closeModal() {
     document.getElementsByTagName("body")[0].classList.remove('no-scroll');
     document.getElementById("contactForm").reset();
     document.getElementById("contactModalOpen").focus();
+
+    // s'il y a des erreurs, on les cache
+    hideError('firstName');
+    hideError('lastName');
+    hideError('email');
+    hideError('message');
 }
 
 /**
