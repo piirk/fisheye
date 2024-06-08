@@ -503,10 +503,8 @@ body {
   border-radius: 5px;
   background-color: #DB8876;
   width: 50%;
-  height: 800px;
-  max-width: 600px;
+  width: 600px;
   padding: 30px;
-  margin: auto;
 }
 .modal__header {
   display: flex;
@@ -569,6 +567,16 @@ body {
 }
 .modal__form .error {
   outline: 1px solid #e91818;
+}
+@media (max-width: 768px) {
+  .modal {
+    width: 500px;
+  }
+}
+@media (max-width: 576px) {
+  .modal {
+    width: 95%;
+  }
 }
 
 .lightbox {
