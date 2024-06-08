@@ -101,6 +101,14 @@ function validateContactForm() {
     } else {
         hideError('message');
     }
+
+    // Si le formulaire est valide, on affiches les données dans la console
+    if (!error) {
+        console.log('Prénom :', firstName);
+        console.log('Nom :', lastName);
+        console.log('Email :', email);
+        console.log('Message :', message);
+    }
 }
 
 /**
