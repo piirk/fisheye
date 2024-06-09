@@ -141,10 +141,6 @@ class PhotographerApp {
             e.preventDefault();
             validateContactForm();
         });
-
-        document.getElementById('contactModalSuccess').addEventListener('click', () => {
-            document.getElementById("contactModalClose").click();
-        });
     }
 
     /**
