@@ -50,6 +50,7 @@ class PhotographerApp {
         this.addListenersSort();
         this.addListenersLikes();
         this.addListenersKeyboard();
+        this.addListenersContact();
     }
 
     /**
@@ -129,6 +130,21 @@ class PhotographerApp {
                 heartIcon.classList.toggle('fa-solid');
             })
         })
+    }
+
+    /**
+     * Ajout des listeners pour le formulaire de contact
+     * @requires contactForm.js
+     */
+    addListenersContact() {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            validateContactForm();
+        });
+
+        document.getElementById('contactModalSuccess').addEventListener('click', () => {
+            document.getElementById("contactModalClose").click();
+        });
     }
 
     /**

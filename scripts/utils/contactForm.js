@@ -108,6 +108,12 @@ function validateContactForm() {
         console.log('Nom :', lastName);
         console.log('Email :', email);
         console.log('Message :', message);
+
+        // on affiche le message de confirmation et on cache le formulaire
+        document.getElementById('contactForm').reset();
+        document.getElementById('contactForm').classList.add('hide');
+        document.querySelector('.modal__success').classList.remove('hide');
+        document.getElementById('contactModalSuccess').focus();
     }
 }
 
@@ -129,9 +135,3 @@ function hideError(field) {
     document.getElementById(field).classList.remove('error');
     document.getElementById(field + 'Error').textContent = '';
 }
-
-// Ajout des listeners pour le modal de contact
- document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    validateContactForm();
- });

@@ -503,6 +503,7 @@ body {
   border-radius: 5px;
   background-color: #DB8876;
   width: 600px;
+  height: 756px;
   padding: 30px;
 }
 .modal__header {
@@ -566,6 +567,28 @@ body {
 }
 .modal__form .error {
   outline: 1px solid #e91818;
+}
+.modal__success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 576px;
+  font-size: 26px;
+}
+.modal__success p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  width: 100%;
+  height: 506px;
+  text-align: center;
 }
 @media (max-width: 768px) {
   .modal {

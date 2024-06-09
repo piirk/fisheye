@@ -182,6 +182,7 @@
     border-radius: 5px;
     background-color: #DB8876;
     width: 600px;
+    height: 756px;
     padding: 30px;
 
     &__header {
@@ -241,6 +242,22 @@
 
         .error {
             outline: 1px solid #e91818;
+        }
+    }
+
+    &__success {
+        @include center-flex-column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 576px;
+        font-size: 26px;
+
+        p {
+            @include center-flex;
+            width: 100%;
+            height: 506px;
+            text-align: center;
         }
     }
 
