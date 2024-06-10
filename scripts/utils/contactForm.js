@@ -1,5 +1,5 @@
 /** 
- * Fonction pour gérer le focus dans le modal de contact
+ * Affiche la modal de contact
  */
 function displayModal() {
     const modal = document.getElementById("contact_modal");
@@ -18,7 +18,7 @@ function displayModal() {
 }
 
 /**
- * Fonction pour gérer le focus dans le modal de contact
+ * Cache la modal de contact
  */
 function closeModal() {
     const modal = document.getElementById("contact_modal");
