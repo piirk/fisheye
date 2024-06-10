@@ -2,7 +2,7 @@
 <html lang="fr">
 
     <head>
-        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link href="css/main.css" rel="stylesheet" type="text/css">
         <meta charset="utf-8">
         <link rel="icon" type="image/png" href="assets/favicon.png">
         <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -33,9 +33,9 @@
     </head>
 
     <body>
-        <header class="header" role="banner">
+        <header class="header">
             <a href="index.html">
-                <img src="assets/images/logo.png" class="header__logo" alt="Fisheye logo" />
+                <img src="assets/images/logo.png" class="header__logo" alt="Fisheye logo">
             </a>
         </header>
 
@@ -43,6 +43,19 @@
 
             <div class="profile-container">
                 <!-- profile du photographe -->
+                
+                <!-- start template profile -->
+                <template>
+                    <div class="profile__infos">
+                        <h1 class="profile__name">Ellie-Rose Wilkens</h1>
+                        <h2 class="profile__location">Paris, France</h2>
+                        <p class="profile__tagline">Capturer des compositions complexes</p>
+                    </div>
+                    <button id="contactModalOpen" class="btn" onclick="displayModal()">Contactez-moi</button>
+                    <img class="profile__image" src="assets/photographers/EllieRoseWilkens.jpg" alt="Ellie-Rose Wilkens">
+                </template>
+                <!-- end template profile -->
+
             </div>
             <div class="main-container">
                 <form class="medias-form">
@@ -55,9 +68,35 @@
                 </form>
                 <div class="medias-container">
                     <!-- les médias du photographe -->
+
+                    <!-- start template media -->
+                    <template>
+                        <figure class="card">
+                            <a href="javascript:;" tabindex="0" title="Ouvrir le média Tricks in te air dans la light box" data-type="media" data-id="952343423">
+                                <video class="card__media" src="assets/medias/930/Sport_Tricks_in_the_air.mp4" alt="Tricks in te air fait en 2018"></video>
+                            </a>
+                            <figcaption class="card__content">
+                                <h3 class="card__text">Tricks in te air</h3>
+                                <button class="card__likes" title="Mettre un like au média Tricks in te air" aria-pressed="false">
+                                    <span class="likes-count">150</span> <i class="fa-regular fa-heart"></i>
+                                </button>
+                            </figcaption>
+                        </figure>
+                    </template>
+                    <!-- end template media -->
+
                 </div>
                 <div class="snippet-container">
                     <!-- le snippet informatif du photographe -->
+
+                    <!-- start template snippet -->
+                    <template>
+                        <p aria-label="Le photographe cumule 951 likes">
+                            <span class="likes-count-snippet">951</span> <i class="fa-solid fa-heart"></i>
+                        </p>
+                    </template>
+                    <!-- end template snippet -->
+
                 </div>
             </div>
 
@@ -70,6 +109,23 @@
 
                 <div class="lightbox__content__slides">
                     <!-- slides -->
+
+                    <!-- start template slide -->
+                    <template>
+                        <div class="mySlides hide">
+                            <video class="lightbox__slide" alt="Tricks in te air" controls="">
+                                <source src="assets/medias/930/Sport_Tricks_in_the_air.mp4" type="video/mp4">
+                                Votre naviguateur ne peut pas lire la vidéo.
+                            </video>
+                        </div>
+                    </template>
+                    <template>
+                        <div class="mySlides hide">
+                            <img class="lightbox__slide" src="assets/medias/930/sport_water_tunnel.jpg" alt="Surfer">
+                        </div>
+                    </template>
+                    <!-- end template slide -->
+
                 </div>
 
                 <button class="lightbox__content__prev">
@@ -93,9 +149,9 @@
             <div class="modal">
                 <header class="modal__header">
                     <h2 id="contactModalTitle" class="modal__header__title">Contactez-moi</h2>
-                    <button id="contactModalClose" onclick="closeModal()" alt="Bouton pour fermer le formulaire">
+                    <button id="contactModalClose" onclick="closeModal()" title="Bouton pour fermer le formulaire">
                         <span class="sr-only">Fermer le formulaire</span>
-                        <img class="modal__header__close" src="assets/icons/close.svg" alt="Croix pour le bouton pour fermer le formulaire" />
+                        <img class="modal__header__close" src="assets/icons/close.svg" alt="Croix pour le bouton pour fermer le formulaire">
                     </button>
                 </header>
                 <form id="contactForm" class="modal__form" novalidate>
