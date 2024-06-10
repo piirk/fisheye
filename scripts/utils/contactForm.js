@@ -10,6 +10,10 @@ function displayModal() {
     document.getElementsByTagName("body")[0].classList.add('no-scroll');
     document.getElementById("contactModalClose").focus();
 
+    // si le message de succès est affiché, on le cache et on affiche le formulaire
+    document.getElementById('contactForm').classList.remove('hide');
+    document.querySelector('.modal__success').classList.add('hide');
+
     trapFocus(modal);
 }
 

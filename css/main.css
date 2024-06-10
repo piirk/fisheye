@@ -80,6 +80,10 @@ body, button, select, textarea {
   font-family: "DM Sans", "Courier New", Courier, monospace;
 }
 
+html {
+  width: 100vw;
+}
+
 body {
   padding-top: 40px;
   min-height: 100vh;
