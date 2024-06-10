@@ -2,7 +2,7 @@
 <html lang="fr">
 
     <head>
-        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link href="css/main.css" rel="stylesheet" type="text/css">
         <meta charset="utf-8">
         <link rel="icon" type="image/png" href="assets/favicon.png">
         <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
     <body>
         <header class="header" role="banner">
             <a href="index.html">
-                <img src="assets/images/logo.png" class="header__logo" alt="Fisheye logo"/>
+                <img src="assets/images/logo.png" class="header__logo" alt="Fisheye logo">
             </a>
             <h1 class="header__title">Nos photographes</h1>
         </header>
@@ -30,6 +30,21 @@
         <main id="main" class="main">
             <div class="main__cards-container">
                 <!-- grid des cards des photographes -->
+
+                <!-- start template card d'un photographe -->
+                <template>
+                    <article class="card">↩
+                        <a class="card__link" href="photographer.html?id=243" alt="Lien vers le profile de Mimi Keel">
+                            <img class="card__image" src="assets/photographers/MimiKeel.jpg" alt="Photo de profile de Mimi Keel">
+                            <h2 class="card__name">Mimi Keel</h2>
+                        </a>
+                        <p class="card__text-location">London, UK</p>
+                        <p class="card__text-tagline">Voir le beau dans le quotidien</p>
+                        <p class="card__text-price">400€/jour</p>
+                    </article>
+                </template>
+                <!-- end template card d'un photographe -->
+
             </div>
         </main>
     </body>
