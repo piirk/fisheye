@@ -26,12 +26,12 @@ class PhotographerCardsTemplate {
             photographerCards += `
                 <article class="card">
                     <a class="card__link" href="photographer.html?id=${photographer.id}" alt="Lien vers le profile de ${photographer.name}">
-                        <img class="card__image" src="${photographer.portrait}" alt="Photo de profile de ${photographer.name}" />
+                        <img class="card__image" src="${photographer.portrait}" alt="Photo de profile" />
                         <h2 class="card__name">${photographer.name}</h2>
                     </a>
-                    <p class="card__text-location">${photographer.city}, ${photographer.country}</p>
-                    <p class="card__text-tagline">${photographer.tagline}</p>
-                    <p class="card__text-price">${photographer.price}€/jour</p>
+                    <p class="card__text-location" aria-label="De ${photographer.city} ${photographer.country}" tabindex="0">${photographer.city}, ${photographer.country}</p>
+                    <p class="card__text-tagline" aria-label="Citation : ${photographer.tagline}" tabindex="0">${photographer.tagline}</p>
+                    <p class="card__text-price" aria-label="Prix ${photographer.price}€ par jour" tabindex="0">${photographer.price}€/jour</p>
                 </article>
             `;
         })

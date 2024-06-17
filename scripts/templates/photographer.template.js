@@ -20,9 +20,9 @@ class PhotographerTemplate {
     createProfile() {
         document.querySelector('.profile-container').innerHTML = `
             <div class="profile__infos">
-                <h1 class="profile__name">${this.photographer.name}</h1>
-                <h2 class="profile__location">${this.photographer.city}, ${this.photographer.country}</h2>
-                <p class="profile__tagline">${this.photographer.tagline}</p>
+                <h1 class="profile__name" tabindex="0">${this.photographer.name}</h1>
+                <h2 class="profile__location" aria-label="De ${this.photographer.city} ${this.photographer.country}" tabindex="0">${this.photographer.city}, ${this.photographer.country}</h2>
+                <p class="profile__tagline" aria-label="Citation : ${this.photographer.tagline}" tabindex="0">${this.photographer.tagline}</p>
             </div>
             <button id="contactModalOpen" class="btn" onclick="displayModal()">Contactez-moi</button>
             <img class="profile__image" src="${this.photographer.portrait}" alt="${this.photographer.name}">

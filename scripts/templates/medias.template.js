@@ -28,7 +28,7 @@ class MediasTemplate {
                     </a>
                     <figcaption class="card__content">
                         <h3 class="card__text">${media.title}</h3>
-                        <button class="card__likes" title="Mettre un like au média ${media.title}" aria-pressed="false">
+                        <button class="card__likes" aria-label="${media.likes} likes pour ${media.title}. Mettre un like au média" aria-pressed="false">
                             <span class="likes-count">${media.likes}</span> <i class="fa-regular fa-heart"></i>
                         </button>
                     </figcaption>

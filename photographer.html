@@ -57,6 +57,20 @@
                 <!-- end template profile -->
 
             </div>
+
+            <div class="snippet-container">
+                <!-- le snippet informatif du photographe -->
+
+                <!-- start template snippet -->
+                <template>
+                    <p aria-label="Le photographe cumule 951 likes">
+                        <span class="likes-count-snippet">951</span> <i class="fa-solid fa-heart"></i>
+                    </p>
+                </template>
+                <!-- end template snippet -->
+
+            </div>
+            
             <div class="main-container">
                 <form class="medias-form">
                     <label class="medias-form__label" for="order-select">Trier par</label>
@@ -86,25 +100,13 @@
                     <!-- end template media -->
 
                 </div>
-                <div class="snippet-container">
-                    <!-- le snippet informatif du photographe -->
-
-                    <!-- start template snippet -->
-                    <template>
-                        <p aria-label="Le photographe cumule 951 likes">
-                            <span class="likes-count-snippet">951</span> <i class="fa-solid fa-heart"></i>
-                        </p>
-                    </template>
-                    <!-- end template snippet -->
-
-                </div>
             </div>
 
         </main>
 
         <!-- modal lightbox -->
         <div id="lightbox_modal" class="lightbox hide" aria-hidden="true" role="dialog">
-            <button class="lightbox__close">&times;</button>
+            <button class="lightbox__close" aria-label="Fermer la lightbox">&times;</button>
             <div class="lightbox__content">
 
                 <div class="lightbox__content__slides">
