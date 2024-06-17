@@ -26,7 +26,7 @@ class PhotographerCardsTemplate {
             photographerCards += `
                 <article class="card">
                     <a class="card__link" href="photographer.html?id=${photographer.id}" alt="Lien vers le profile de ${photographer.name}">
-                        <img class="card__image" src="${photographer.portrait}" alt="Photo de profile" />
+                        <img class="card__image" src="${photographer.portrait}" alt="Photo de profile de ${photographer.name}" />
                         <h2 class="card__name">${photographer.name}</h2>
                     </a>
                     <p class="card__text-location" aria-label="De ${photographer.city} ${photographer.country}" tabindex="0">${photographer.city}, ${photographer.country}</p>
