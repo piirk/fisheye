@@ -117,7 +117,7 @@ function validateContactForm() {
         document.getElementById('contactForm').reset();
         document.getElementById('contactForm').classList.add('hide');
         document.querySelector('.modal__success').classList.remove('hide');
-        document.getElementById('contactModalSuccess').focus();
+        document.getElementById('contactModalClose').focus();
     }
 }
 
