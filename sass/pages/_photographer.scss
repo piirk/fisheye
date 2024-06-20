@@ -176,97 +176,113 @@
     }
 }
 
-.modal {
-    @include position-fix-center;
-    @include center-flex-column(20px);
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 600px;
-    height: 756px;
-    padding: 30px;
 
-    &__header {
-        @include center-flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
+.modal-container {
+    position: fixed;
+    z-index: 1;
+    //padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    //overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 
-        &__close {
-            cursor: pointer;
-            height: 30px;
-        }
-
-        &__title {
-            font-size: 50px;
-            font-weight: normal;
-        }
-    }
-
-    &__form {
-        @include center-flex-column(10px);
-        align-items: flex-start;
-        width: 100%;
-
-        label {
-            color: #312E2E;
-            font-size: 26px;
-        }
-
-        div {
-            @include center-flex-column(5px);
+    .modal {
+        @include position-fix-center;
+        //@include center-flex-column(20px);
+        border-radius: 5px;
+        background-color: #DB8876;
+        width: 600px;
+        height: 756px;
+        max-height: 90%;
+        overflow-y: auto;
+        padding: 30px;
+    
+        &__header {
+            @include center-flex;
+            justify-content: space-between;
             align-items: flex-start;
             width: 100%;
+            margin-bottom: 20px;
+    
+            &__close {
+                cursor: pointer;
+                height: 30px;
+            }
+    
+            &__title {
+                font-size: 50px;
+                font-weight: normal;
+            }
         }
-
-        input {
+    
+        &__form {
+            @include center-flex-column(10px);
+            align-items: flex-start;
             width: 100%;
-            border-radius: 5px;
-            font-size: 22px;
-            padding: 10px;
+    
+            label {
+                color: #312E2E;
+                font-size: 26px;
+            }
+    
+            div {
+                @include center-flex-column(5px);
+                align-items: flex-start;
+                width: 100%;
+            }
+    
+            input {
+                width: 100%;
+                border-radius: 5px;
+                font-size: 22px;
+                padding: 10px;
+            }
+    
+            textarea {
+                width: 100%;
+                height: 120px;
+                border-radius: 5px;
+                font-size: 22px;
+                padding: 5px 10px;
+                resize: none;
+            }
+    
+            &__error {
+                height: 16px;
+                color: #b30606;
+                font-size: 16px;
+            }
+    
+            .error {
+                outline: 1px solid #e91818;
+            }
         }
-
-        textarea {
+    
+        &__success {
+            @include center-flex-column;
+            justify-content: space-between;
+            align-items: flex-start;
             width: 100%;
-            height: 120px;
-            border-radius: 5px;
-            font-size: 22px;
-            padding: 5px 10px;
-            resize: none;
+            height: 576px;
+            font-size: 26px;
+    
+            p {
+                @include center-flex;
+                width: 100%;
+                height: 506px;
+                text-align: center;
+            }
         }
-
-        &__error {
-            height: 16px;
-            color: #b30606;
-            font-size: 16px;
+    
+        @include respond(sm) {
+            width: 500px;
         }
-
-        .error {
-            outline: 1px solid #e91818;
+    
+        @include respond(xs) {
+            width: 95%;
         }
-    }
-
-    &__success {
-        @include center-flex-column;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 100%;
-        height: 576px;
-        font-size: 26px;
-
-        p {
-            @include center-flex;
-            width: 100%;
-            height: 506px;
-            text-align: center;
-        }
-    }
-
-    @include respond(sm) {
-        width: 500px;
-    }
-
-    @include respond(xs) {
-        width: 95%;
     }
 }
 
