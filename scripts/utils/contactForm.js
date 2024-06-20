@@ -128,7 +128,7 @@ function validateContactForm() {
  */
 function showError(field, message) {
     document.getElementById(field).classList.add('error');
-    document.getElementById(field + 'Error').textContent = message;
+    document.getElementById(field + 'Error').innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${message}`;
 }
 
 /**

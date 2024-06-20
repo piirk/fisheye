@@ -524,7 +524,7 @@ body {
   border-radius: 5px;
   background-color: #DB8876;
   width: 600px;
-  height: 756px;
+  height: 762px;
   max-height: 90%;
   overflow-y: auto;
   padding: 30px;
@@ -557,11 +557,7 @@ body {
   align-items: flex-start;
   width: 100%;
 }
-.modal-container .modal__form label {
-  color: #312E2E;
-  font-size: 26px;
-}
-.modal-container .modal__form div {
+.modal-container .modal__form__field {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -569,6 +565,10 @@ body {
   gap: 5px;
   align-items: flex-start;
   width: 100%;
+}
+.modal-container .modal__form label {
+  color: #312E2E;
+  font-size: 26px;
 }
 .modal-container .modal__form input {
   width: 100%;
@@ -585,12 +585,16 @@ body {
   resize: none;
 }
 .modal-container .modal__form__error {
+  flex-direction: row;
   height: 16px;
   color: #b30606;
   font-size: 16px;
 }
 .modal-container .modal__form .error {
   outline: 1px solid #e91818;
+}
+.modal-container .modal__form .error:focus-visible, .modal-container .modal__form .error:focus {
+  outline: 2px solid #e91818;
 }
 .modal-container .modal__success {
   display: flex;
