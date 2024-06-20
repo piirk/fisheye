@@ -128,7 +128,8 @@ function validateContactForm() {
  */
 function showError(field, message) {
     document.getElementById(field).classList.add('error');
-    document.getElementById(field + 'Error').innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${message}`;
+    document.getElementById(field).setAttribute('aria-invalid', 'true');
+    document.getElementById(field + 'Error').innerHTML = `<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> ${message}`;
 }
 
 /**
@@ -137,5 +138,6 @@ function showError(field, message) {
  */
 function hideError(field) {
     document.getElementById(field).classList.remove('error');
+    document.getElementById(field).setAttribute('aria-invalid', 'false');
     document.getElementById(field + 'Error').textContent = '';
 }

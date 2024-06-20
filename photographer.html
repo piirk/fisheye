@@ -151,30 +151,29 @@
             <div class="modal">
                 <header class="modal__header">
                     <h2 id="contactModalTitle" class="modal__header__title">Contactez-moi</h2>
-                    <button id="contactModalClose" onclick="closeModal()" title="Bouton pour fermer le formulaire">
-                        <span class="sr-only">Fermer le formulaire</span>
-                        <img class="modal__header__close" src="assets/icons/close.svg" alt="Croix pour le bouton pour fermer le formulaire">
+                    <button id="contactModalClose" onclick="closeModal()" title="Fermer le formulaire">
+                        <img class="modal__header__close" src="assets/icons/close.svg" alt="Fermer le formulaire">
                     </button>
                 </header>
                 <form id="contactForm" class="modal__form" novalidate>
                     <div class="modal__form__field">
                         <label for="firstName">Prénom<span class="required" aria-hidden="true"> *</span></label>
-                        <input type="text" id="firstName" name="firstName" aria-required="true">
+                        <input type="text" id="firstName" name="firstName" aria-required="true" aria-describedby="firstNameError">
                         <div class="modal__form__error" id="firstNameError"></div>
                     </div>
                     <div class="modal__form__field">
                         <label for="lastName">Nom<span class="required" aria-hidden="true"> *</span></label>
-                        <input type="text" id="lastName" name="lastName" aria-required="true">
+                        <input type="text" id="lastName" name="lastName" aria-required="true" aria-describedby="lastNameError">
                         <div class="modal__form__error" id="lastNameError"></div>
                     </div>
                     <div class="modal__form__field">
                         <label for="email">Email<span class="required" aria-hidden="true"> *</span></label>
-                        <input type="email" id="email" name="email" aria-required="true">
+                        <input type="email" id="email" name="email" aria-required="true" aria-describedby="emailError">
                         <div class="modal__form__error" id="emailError"></div>
                     </div>
                     <div class="modal__form__field">
                         <label for="message">Votre message<span class="required" aria-hidden="true"> *</span></label>
-                        <textarea id="message" name="message" rows="4" aria-required="true"></textarea>
+                        <textarea id="message" name="message" rows="4" aria-required="true" aria-describedby="messageError"></textarea>
                         <div class="modal__form__error" id="messageError"></div>
                     </div>
                     <button class="btn" type="submit">Envoyer</button>
