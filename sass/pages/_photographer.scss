@@ -226,6 +226,11 @@
                 @include center-flex-column(5px);
                 align-items: flex-start;
                 width: 100%;
+
+                .required {
+                    color: #b30606;
+                    font-size: 1.3rem;
+                }
             }
     
             label {

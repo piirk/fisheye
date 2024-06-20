@@ -566,6 +566,10 @@ body {
   align-items: flex-start;
   width: 100%;
 }
+.modal-container .modal__form__field .required {
+  color: #b30606;
+  font-size: 1.3rem;
+}
 .modal-container .modal__form label {
   color: #312E2E;
   font-size: 26px;

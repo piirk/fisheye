@@ -158,22 +158,22 @@
                 </header>
                 <form id="contactForm" class="modal__form" novalidate>
                     <div class="modal__form__field">
-                        <label for="firstName">Prénom</label>
+                        <label for="firstName">Prénom<span class="required"> *</span></label>
                         <input type="text" id="firstName" name="firstName">
                         <div class="modal__form__error" id="firstNameError"></div>
                     </div>
                     <div class="modal__form__field">
-                        <label for="lastName">Nom</label>
+                        <label for="lastName">Nom<span class="required"> *</span></label>
                         <input type="text" id="lastName" name="lastName">
                         <div class="modal__form__error" id="lastNameError"></div>
                     </div>
                     <div class="modal__form__field">
-                        <label for="email">Email</label>
+                        <label for="email">Email<span class="required"> *</span></label>
                         <input type="email" id="email" name="email">
                         <div class="modal__form__error" id="emailError"></div>
                     </div>
                     <div class="modal__form__field">
-                        <label for="message">Votre message</label>
+                        <label for="message">Votre message<span class="required"> *</span></label>
                         <textarea id="message" name="message" rows="4"></textarea>
                         <div class="modal__form__error" id="messageError"></div>
                     </div>
